@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
-    <link rel="stylesheet" href="projectCSS.css">
-    <script defer src="projectJS.js"></script>
+    <link rel="stylesheet" href="../static/projectCSS.css">
+    <script defer src="../static/projectJS.js"></script>
 </head>
 <body id="homePageBody">
     <header class="header">
@@ -14,15 +14,32 @@
     </header>
     <nav class="nav">
         <ul class="nav-list">
-            <li class="list-item"><a href="#">צור קשר</a></li>
-            <li class="list-item"><a href="#">המלצות</a></li>
-            <li class="list-item"><a href="#">בתי עסק בב"ש</a></li>
-            <li class="list-item"><a href="../templates/projectHTML.html">דף הבית</a></li>
+            <li class="list-item"><a href="../templates/contactHTML.html">צור קשר</a></li>
+            <li class="list-item"><a href="../templates/month_reccomendation.html">המלצות</a></li>
+            <li class="list-item"><a href="../templates/businesses.html">בתי עסק בב"ש</a></li>
+            <li class="list-item"><a href="../templates/homeHTML.html">דף הבית</a></li>
+            <span class="login_image">
+                <a href="#">
+                    <img src="../static/log_in.png">
+                </a>
+            </span>
         </ul>
     </nav>
  <span>
     <h1 id="header2"> Cheers</h1>
  </span>
+ <div class="divRecommend">
+    <h1 id="recommend">
+        המלצות עבורך:<br>
+    </h1>
+    <div class="recommend-border" >
+       <ol>
+           <li><a href="https://visitbr7.co.il/food/%D7%9E%D7%99%D7%9C%D7%91%D7%94/">מילבה</a></li><br>
+           <li><a href="https://easy.co.il/page/10092444">פרידה</a></li><br>
+           <li><a href="https://easy.co.il/page/9217498">רוזה</a></li>
+       </ol>
+    </div>
+</div>
      <footer id="footer1"> 
         <p>
             עקבו אחרינו ברשתות החברתיות

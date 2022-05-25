@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>contact</title>
-    <link rel="stylesheet" href="contactCSS.css">
-    <script defer src="contactJS.js"></script>
+    <link rel="stylesheet" href="../static/projectCSS.css">
+    <script defer src="../static/projectJS.js"></script>
 </head>
 
 <body id="homePageBody">
@@ -16,14 +16,20 @@
     </header>
     <nav class="nav">
         <ul class="nav-list">
-            <li class="list-item"><a href="#">צור קשר</a></li>
-            <li class="list-item"><a href="#">המלצות</a></li>
-            <li class="list-item"><a href="#">בתי עסק בב"ש</a></li>
-            <li class="list-item"><a href="../templates/projectHTML.html">דף הבית</a></li>
+            <li class="list-item"><a href="../templates/contactHTML.html">צור קשר</a></li>
+            <li class="list-item"><a href="../templates/month_reccomendation.html">המלצות</a></li>
+            <li class="list-item"><a href="../templates/businesses.html">בתי עסק בב"ש</a></li>
+            <li class="list-item"><a href="../templates/homeHTML.html">דף הבית</a></li>
+            <span class="login_image">
+                <a href="../templates/preview.html">
+                    <img src="../static/log_in.png">
+                </a>
+            </span>
         </ul>
+
     </nav>
     <div>
-        <h1 id="header2"> צור קשר</h1>
+        <h1 id="header3"> צור קשר</h1>
     </div>
     <div id="mainDiv">
         <span id="formInput">
@@ -31,7 +37,7 @@
                 <ul>
                     <input class="listInputBox" type="text" placeholder="שם מלא *" id="fname" name="fname"
                         autocomplete="on" required /> <br> <br>
-                    <input class="listInputBox" type="number" placeholder="טלפון *" id="phoneNumber" autocomplete="on"
+                    <input class="listInputBox" type="phone" placeholder="טלפון *" id="phoneNumber" autocomplete="on"
                         name="phoneNumber" required />
                     <br><br>
                     <input class="listInputBox" type="email" placeholder="אימייל *" id="email" name="email"
@@ -39,7 +45,7 @@
                         <div id="send">                 
                         <input type="checkbox" id="agreeDetails" name="agreeDetails" required>
                         <label for="">אני מאשר/ת בזאת קבלת חומר פרסומי שישלח אליי </label> <br><br>               
-                        <button type="submit">שליחה</button>
+                        <button type="submit" id="contact_submit_button">שליחה</button>
                         </div> 
                 </ul>
             </form>

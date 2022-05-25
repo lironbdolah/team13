@@ -1,0 +1,702 @@
+
+  
+  :root{
+      --orange1: #fff7e6;
+      --orange2: #ffefcc;
+      --orange3: #ffe7b3;
+      --orange4: #ffdf99;
+      --orange5: #ffd780;
+      --orange10: #f1cca6;
+      --orange6: #ffcf66;
+      --orange7:#ffae00;
+      --orange8: #cc8b00;
+      --orange9:#805700;
+      --black:#0c0900;
+      --ligthGray:#fefefe;
+      --white:color white;
+  }
+  
+  .active {
+    border: 2px solid var(--orange7);
+    border-radius: 5px;
+    }
+  
+  * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      font-family:PageFont;
+  }
+  
+  .slider {
+    -webkit-appearance: none;
+    width: 250px;
+    height: 25px;
+    background: #d3d3d3;
+    opacity: 0.7;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    background: var(--orange7);
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    background: var(--orange7);
+  }
+  
+
+
+  .nav{
+    background-color: var(--orange5);
+    color: var(--black);
+    display: flex;
+    padding-right: 0px;
+    right: 0px;
+    font-size: 20px;
+    text-align: right;
+    height: 60px;
+    padding-top: 4px;
+}
+
+ .nav-list {
+    list-style-type: none;
+    padding-right: 0px;
+} 
+
+.nav-list .list-item {
+    display: inline-block;
+    padding: 10px;
+}
+
+.nav a {
+    color:var(--black);
+}
+
+.nav a:hover {
+    color:var(--orange3);
+} 
+
+.login_image{
+    padding-top: 5px;
+    width: 80px;
+    height: 60px;
+    float: left;
+    margin-right: 600px;
+
+}
+
+.header{
+      width: 50px;
+}
+.logo_image{
+    background-color: var(--orange5);;
+    float: right;
+    width: 80px;
+    height: 60px;
+    padding-top: 0px;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.InputBox{
+    width: 170px;
+  }
+  #search{
+    width: 35px;
+    font-size: 15px;
+  }
+  
+  #searchInput{
+    font-size: 15px;
+  }
+  
+  #combo{
+    width: 250px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: bolder;
+    background-color: var(--orange2);
+    border-radius: 5px;
+  }
+  
+  #combo-div{
+  padding-top: 50px;
+  width: 250px;
+  }
+  
+  #combo_box{
+      padding-top: 100px;
+      width: 250px;
+  margin: 0 auto;
+  }
+
+  #header2{
+      font-size: 100px;
+      display: inline;
+      color: var(--orange7);
+      font-family:HeaderFont;
+  }
+
+  #header3 {
+    font-size: 100px;
+    display: inline;
+    color: var(--orange7);
+    font-family:FirstFont;
+  }
+ 
+  #footer1{
+      padding-top: 400px;
+      text-align: center;
+  }
+  
+  #homePageBody {
+      background-image: url("../static/backround_image.png");
+      background-repeat: no-repeat;
+      text-align: center;
+      background-position: center;
+  }
+  
+
+  .icon2 {
+      height: 20px;
+  }
+  
+
+ 
+  
+  @font-face {
+      font-family: FirstFont;
+      src: url(../static/ganclm_bold-webfont.ttf);
+  }
+  @font-face {
+      font-family: HeaderFont;
+      src: url(../static/Panipuri.ttf);
+  }
+  @font-face {
+    font-family: PageFont;
+    src: url(../static/MPLUS1p-Medium.ttf);
+}
+
+  
+/* ########### preview buttons settings ########### */
+.connect_button{
+    display: block;
+    margin: 0 auto; /* center button */
+    margin-bottom: 50px; /* distance from other button button */
+    margin-top: 100px; /* distance from top */
+    font-size: 28px;
+    padding-left: 65px; 
+    padding-right: 65px; /* button size */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;  /* round corners */
+    background-color: var(--orange3);
+    transition-duration: 0.4s; /* hover color change speed */
+    
+}
+
+.connect_button:hover  {
+    background-color: var(--orange1);
+  }
+
+.sign_up_button{
+    display: block;
+    margin: 0 auto;
+    height: 10;
+    width: 30;
+    font-size: 28px;
+    padding-left: 75px; 
+    padding-right: 75px; /* button size */
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 5px;  /* round corners */
+    background-color: var(--orange3);
+    transition-duration: 0.4s; /* hover color change speed */
+}
+
+.sign_up_button:hover  {
+    background-color: var(--orange1);
+  }
+
+
+/* ########### connect page settings ########### */
+#connect_border{
+
+ background-color: var(--orange1);
+ border-radius: 5px;
+ border-color: var(--orange6);
+ border-style: solid;
+ height: 200px;
+ width: 300px;
+ margin: 0 auto; 
+ text-align: right;
+ opacity: 65%;
+ margin-top: 80px; /* distance from top */
+ padding-right: 10px;
+ 
+
+}
+
+
+/* labels for connect and sign up pages  */
+.username{
+
+    display: block;
+    margin-top: 8px; 
+    font-family: FirstFont;
+
+}
+.mail{
+    display: block;
+    font-size: 8;
+    font-family: FirstFont;
+}
+.phone{
+    display: block;
+    font-size: 8;
+    font-family: FirstFont;
+}
+.password{
+    display: block;
+    font-size: 8;
+    font-family: FirstFont;
+    
+}
+
+/* input boxes for the connect page  */
+.input{
+    border-radius: 5px;
+    width: 250px;
+    
+}
+
+
+#send_button{
+    margin: 0 auto; /* center button */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 15px;
+    height: 25px;
+    background-color: var(--orange4);
+    width: 100px;
+    font-family: FirstFont;
+    animation: changeColor 2s linear 0s infinite;
+}
+
+
+
+@keyframes changeColor {
+    0% {background-color: var(--orange1);}
+    50% {background-color: var(--orange2);}
+    100% {background-color: var(--orange3);}
+}
+
+
+
+.forgot_password{
+    padding-right: 90px;
+    font-family: FirstFont;
+}
+
+
+/* ########### signup page settings  ########### */
+
+#sign_up_send_button{
+    
+    margin: 0 auto; /* center button */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 15px;
+    height: 25px;
+    width: 100px;
+    background-color: var(--orange1);
+    font-family: FirstFont;
+    animation: changeColor 2s linear 0s infinite;
+} 
+
+/* sign up surrounding border */
+#sign_up_border{
+
+    background-color: var(--orange1);
+    border-radius: 5px;
+    border-color: var(--orange6);
+    border-style: solid;
+    height: 300px;
+    width: 425px;
+    margin: 0 auto; 
+    text-align: right;
+    opacity: 65%;
+    margin-top: 80px; /* distance from top */
+    padding-right: 10px;
+   
+   }
+
+/* section class to fit age and gender on the same*/
+.lower_inputs
+{
+    margin: auto;
+    margin-top: 10px;
+}
+
+/* age input position */
+.age{
+    float: right;
+    
+}
+.age_label{
+    margin-top: 8px; 
+    font-family: FirstFont;
+}
+
+.gender_label{
+    margin-top: 8px; 
+    font-family: FirstFont;
+}
+
+/* gender input position */
+.gender{
+    margin-right: 66%;
+}
+
+/* username, mail, password and phone inputs */
+.big_input{
+    border-radius: 5px;
+    width: 350px;
+    
+}
+
+/* age and sex inputs */
+.small_input{
+    border-radius: 5px;
+    width: 45px;
+    
+}
+
+
+/* ########### monthly reccomendations page settings  ########### */
+
+
+.bars_images{
+    margin-top: 100px;
+}
+
+
+.frida{
+    border: var(--orange6);
+    border-radius: 20px;
+    border-style: solid;
+    height: 170px;
+    width: 170px;
+    transition-duration: 0.4s; /* hover color change speed */
+}
+
+.frida:hover  {
+    opacity: 70%;
+  }
+
+  
+.link_size{ /* to limit the link size*/
+    height:170px;
+    width:170px;
+    margin: 0 auto; 
+    margin-bottom: 100px;
+    display: block;
+}
+
+
+.milba{
+    display: inline-block;
+    margin-top: 8px; 
+    border: var(--orange6);
+    border-radius: 20px;
+    border-style: solid;
+    height: 170px;
+    width: 170px; 
+    margin-left: 200px;
+    transition-duration: 0.4s; /* hover color change speed */   
+}
+
+.milba:hover  {
+    opacity: 70%;
+}
+
+.bbb{
+    display: inline-block;
+    margin-top: 8px; 
+    border: var(--orange6);
+    border-radius: 20px;
+    border-style: solid;
+    height: 170px;
+    width: 170px; 
+    transition-duration: 0.4s; /* hover color change speed */ 
+}
+
+.bbb:hover  {
+    opacity: 70%;
+}
+
+
+
+/* ########### businesses in BS page settings  ########### */
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 2rem;
+}
+
+.businessses_img1, .businessses_img4, .businessses_img7 {
+    justify-self: end;
+}
+.businessses_img3, .businessses_img6, .businessses_img9 {
+    justify-self: start;
+}
+
+.img-size {
+    width: 170px;
+    height: 170px;
+}
+
+@media screen and (max-width: 1250px){
+    #container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .businessses_img1, .businessses_img4, .businessses_img7 {
+        justify-self: center;
+    }
+    .businessses_img3, .businessses_img6, .businessses_img9 {
+        justify-self: center;
+    }
+}
+
+@media screen and (max-width: 850px){
+    #container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .businessses_img1, .businessses_img4, .businessses_img7 {
+        justify-self: center;
+    }
+    .businessses_img3, .businessses_img6, .businessses_img9 {
+        justify-self: center;
+    }
+}
+
+
+
+/* ########### contactHTML page settings  ########### */
+
+.listInputBox{ 
+    border-radius: 5px;
+}
+
+  #formInput{
+      width: 400px;
+      display: inline;
+      float: right;
+    
+}
+#infoParagraph{
+    background-color:#f1cca6;
+    border-style:solid;
+    float: right;
+    border-radius: 10px;
+    width: 300px;
+    height: 128px;
+    opacity: 80%;
+}
+
+#mainDiv{
+    padding-top: 90px;
+    padding-right: 200px;
+} 
+#send{
+    width: 700px;
+    padding-top: 60px;
+    padding-right: 180px;  
+}
+
+#contact_submit_button{
+    background-color: var(--orange4);
+    animation: changeColor 2s linear 0s infinite;
+}
+
+/* ########### profiletHTML page settings  ########### */
+#BusinessName {
+    font-family: FirstFont;
+    font-size: 100px;
+    color: var(--orange7);
+    text-align: center;
+}
+
+#business-card {
+    border-radius: 150px;
+    /* box-sizing: content-box; */
+    background-color: var(--orange2);
+    /* width: 1000px; */
+    align-items: center;
+    /* margin: 0 auto;    */
+    font-size: larger;
+    /* padding-right: 50px; */
+    display: grid; 
+    margin: 0px 200px 0px 200px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    grid-template-areas:  'title-1 details details'
+                          'title-1 details details'
+                          'title-3 stars   stars'
+                          'reviews reviews reviews'
+                          'title-4 freeTxt freeTxt'
+                          'title-5 stars-2 button-1'      
+                          'order   order   order';
+
+}
+
+  #details {
+      grid-area: details;
+      background-color: white;
+      padding: 10px;
+      border-style: solid;
+      border: 1px;
+      margin: 30px 50px 10px 120px;
+      border-radius: 20px;
+  }
+
+  #reviews {
+      grid-area: reviews;
+      background-color: white;
+      padding: 10px;
+      border-style: solid;
+      border: 1px;
+      margin: 10px 100px 50px 120px;
+      border-radius: 20px;
+
+  }
+  #bussiness-reviews {
+      padding-right: 25px;    
+  }
+
+  #title-1 {
+      padding-right: 120px;
+      grid-area: title-1;
+      font-size: 16px;
+      width: 350px;
+  }
+
+  #title-1-2 {
+      padding-bottom: 50px;
+      width: 350px;
+  }
+
+  #title-3 {
+      padding-right: 120px;  
+      font-size: 16px; 
+      grid-area: title-3; 
+      width: 350px; 
+  }
+
+  #title-4 {
+      padding-right: 120px;  
+      font-size: 16px; 
+      grid-area: title-4;  
+      width: 350px;    
+  }
+
+  #title-5 {
+      padding-right: 120px;  
+      font-size: 16px;
+      grid-area: title-5;
+  }
+
+  #open-hours {
+      padding-top: 0px;
+  }
+
+  #drinks-sales {
+      padding-right: 25px;
+  }
+  
+  #stars {
+    grid-area: stars;  
+    margin: 10px 50px 10px 100px;
+  }
+
+  #stars-2 {
+      grid-area: stars-2;  
+      margin: 10px 50px 10px 100px;
+  }
+
+  .checked {
+      color: orange;
+  }
+
+  #freeTxt {
+      grid-area: freeTxt;
+      background-color: white;
+      padding: 10px;
+      border-style: solid;
+      border: 1px;
+      margin: 30px 50px 10px 120px;
+      border-radius: 20px;
+  }
+
+  #write {
+      margin-right: 20px;
+      align-items: center;
+  }
+
+  #button-1 {
+      grid-area: button-1;
+      margin-right: 180px;
+      margin-bottom: 70px;
+
+  }
+
+  #order {
+      grid-area: order;
+      margin: 0 auto;
+      font-size: 25px;
+      margin-bottom: 30px;
+  }
+
+  #footerProfile{
+      padding-top: 50px;
+      text-align: center;
+  }
+
+
+/* ########### projectHTML page settings  ########### */
+.divRecommend{
+    margin: 0 auto;
+}
+#recommend{
+    margin-bottom: 30px;
+}
+.recommend-border {
+    text-align: right;
+    list-style-position: inside;
+    margin: 0 auto;
+    background-color: var(--orange10);
+    border-style: solid;
+
+    border-radius: 10px;
+    width: 270px;
+    height: 200px;
+    opacity: 80%;
+
+}

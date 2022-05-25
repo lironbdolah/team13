@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sign up</title>
-    <link rel="stylesheet" href="projectCSS.css">
-    <script defer src="projectJS.js"></script>
+    <link rel="stylesheet" href="../static/projectCSS.css">
+    <script defer src="../static/projectJS.js"></script>
 </head>
 <body id="homePageBody">
     <header class="header">
@@ -14,42 +14,48 @@
     </header>
     <nav class="nav">
         <ul class="nav-list">
-            <li class="list-item"><a href="#">צור קשר</a></li>
-            <li class="list-item"><a href="#">המלצות</a></li>
-            <li class="list-item"><a href="#">בתי עסק בב"ש</a></li>
-            <li class="list-item"><a href="../templates/projectHTML.html">דף הבית</a></li>
+            <li class="list-item"><a href="#" onclick="alert('יש צורך להתחבר טרם כניסה למערכת');">צור קשר</a></li>
+            <li class="list-item"><a href="#" onclick="alert('יש צורך להתחבר טרם כניסה למערכת');">המלצות</a></li>
+            <li class="list-item"><a href="#" onclick="alert('יש צורך להתחבר טרם כניסה למערכת');">בתי עסק בב"ש</a></li>
+            <li class="list-item"><a href="#" onclick="alert('יש צורך להתחבר טרם כניסה למערכת');">דף הבית</a></li>
+            <span class="login_image">
+                <a href="../templates/preview.html">
+                    <img src="../static/log_in.png">
+                </a>
+            </span>
         </ul>
+
     </nav>
     <span>
-        <h1 id="header2">הרשמה</h1>
+        <h1 id="header3">הרשמה</h1>
     </span>
-    <form id="sign_up_border" action="URL" method="post" onsubmit="alert('ההרשמה בוצעה בהצלחה');">
+    <form id="sign_up_border" action="../templates/homeHTML.html" method="post" onsubmit="alert('ההרשמה בוצעה בהצלחה');">
 
         <label class="username">שם משתמש:</label>
-        <input type="text" class="big_input" required>
+        <input type="text" class="big_input" id="username2" name="username2" autocomplete="on" required>
 
         <label class="mail" >מייל:</label>
-        <input type="text" class="big_input" required>
+        <input type="email" class="big_input" id="mail2" name="mail2" autocomplete="on" required>
 
         <label class="password">סיסמה:</label>
-        <input type="password" class="big_input" required>
+        <input type="password" class="big_input" id="password1" name="password1"  autocomplete="on" required>
 
         
         <label class="phone">טלפון:</label>
-        <input type="tel" class="big_input"required >
+        <input type="phone" class="big_input" id="phone1" name="phone1" autocomplete="on" required >
 
         <section class="lower_inputs">  
             <div class="age">  
                 <label class="age_label">גיל:</label>
-                <input type="number" class="small_input" required>
+                <input type="number" class="small_input" id="age_label1" name="age_label1" autocomplete="on" required>
             </div> 
             <div class="gender">  
                 <label class="gender_label">מין:</label>
-                <input type="text" class="small_input">
+                <input type="text" class="small_input"  id="gender_label1" name="gender_label1" autocomplete="on" required>
             </div>
         </section>
 
-        <button onclick="window.location.href='../templates/projectHTML.html'" id="sign_up_send_button">שלח</button>
+        <button id="sign_up_send_button" type="submit">שלח</button>
     </form>
 
 
