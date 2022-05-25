@@ -23,7 +23,7 @@
     <span>
         <h1 id="header2">הרשמה</h1>
     </span>
-    <div class="sign_up_border">
+    <form id="sign_up_border" action="URL" method="post" onsubmit="alert('ההרשמה בוצעה בהצלחה');">
 
         <label class="username">שם משתמש:</label>
         <input type="text" class="big_input" required>
@@ -49,8 +49,8 @@
             </div>
         </section>
 
-        <button onclick="window.location.href='../templates/projectHTML.html'" class="sign_up_send_button">שלח</button>
-    </div>
+        <button onclick="window.location.href='../templates/projectHTML.html'" id="sign_up_send_button">שלח</button>
+    </form>
 
 
      <footer id="footer1"> 

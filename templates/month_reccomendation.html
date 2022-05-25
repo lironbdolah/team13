@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect</title>
+    <title> Month Reccomendations</title>
     <link rel="stylesheet" href="projectCSS.css">
     <script defer src="projectJS.js"></script>
 </head>
@@ -21,19 +21,23 @@
         </ul>
     </nav>
     <span>
-        <h1 id="header2"> התחברות</h1>
+        <h1 id="header2">המלצות החודש</h1>
     </span>
 
-    <form id="connect_border" action="URL" method="post" onsubmit="alert('התחברות בוצעה בהצלחה');">
-        <label class="username" >שם משתמש:</label>
-        <input type="text" class="input" required>
+    <div class="bars_images">
+        <div class="link_size">
+            <a href="../templates/profile.html" id="link_size">
+                <img  src="../static/frida.png" class="frida">
+            </a>
+        </div>
+        <a href="../templates/projectHTML.html">
+            <img class="milba" src="../static/milba.png">
+        </a>
+        <a href="../templates/projectHTML.html">
+            <img class="bbb" src="../static/bbb.png">
+        </a>
+    </div>
 
-        <label class="password">סיסמה:</label>
-        <input type="text" class="input" required>
-
-        <button onclick="window.location.href='../templates/projectHTML.html'" id="send_button">שלח</button>
-        <a href="" class="forgot_password">שכחתי סיסמה </a>
-    </form>
 
 
      <footer id="footer1"> 
