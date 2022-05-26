@@ -60,6 +60,29 @@ const deleteAllStars = () => {
     star5.classList.remove("checked");
 }
 
+const submitReview = () => {
+    const textValue = document.getElementById("write")?.value;
+    const numOfStars = getNumOfStars("stars-2");
+    
+    const submitObject = {
+        textValue: textValue,
+        numOfStars: numOfStars
+    }
+}
+
+const getNumOfStars = (divId) => {
+    let numOfStars = 0;
+    const starsElement = document.getElementById(divId).getElementsByTagName("*");;
+
+    for(var i = 0; i < starsElement.length; i++){
+        if(starsElement[i]?.classList.contains("checked")){
+            numOfStars++;
+        }
+    }
+
+    return numOfStars;
+}
+
 
 // ################## BS in beer sheva page ################## //
 const setImgBorderOnHover = (img) => {

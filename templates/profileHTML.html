@@ -34,7 +34,7 @@
     </span>
     <div id="business-card">
         <div id="title-1">
-            <h2>שעות happy hour:</h2>
+            <h2 id="title-1-1">שעות happy hour:</h2>
             <h2 id="title-1-2">מה שווה אצלנו?</h2>
         </div>
         <div id="details">
@@ -46,7 +46,7 @@
             </ol>
         </div>
         <div id="title-3">
-            <h2>חברים מספרים:</h2>
+            <h2 id="title-3-1">חברים מספרים:</h2>
         </div>
         <div id="stars">
             <span class="fa fa-star checked"></span>
@@ -62,27 +62,28 @@
                         <li><p>מנות גדולות ומעניינות</p></li>
                     </ol>
         </div>
+
         <div id="title-4">
-            <h2>רוצה לפרגן/ לעדכן:</h2>
-        </div>
-        <div id="freeTxt">
-            <form> 
-                <input type="text" id="write" name="write">
-            </form>
+            <h2 id="title-4-1">רוצה לפרגן/ לעדכן:</h2>
         </div>
         <div id="title-5">
-            <h2>דרג:</h2>
+            <h2 id="title-5-1">דרג:</h2>
         </div>
-        <div id="stars-2">
-            <span id= "star1" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
-            <span id= "star2" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
-            <span id= "star3" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
-            <span id= "star4" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
-            <span id= "star5" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
-        </div>
-        <div>
-            <button id="button-1">צרף ביקורת</button>
-        </div>
+        <form id="form-r" onsubmit="event.preventDefault(); submitReview(this);">
+                <div id="freeTxt">
+                    <input id="write" type="text" name="write">
+                </div>
+                <div id="stars-2">
+                    <span id= "star1" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
+                    <span id= "star2" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
+                    <span id= "star3" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
+                    <span id= "star4" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
+                    <span id= "star5" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
+                </div>
+                <div id="submit-r">
+                    <input type="submit"/>
+                </div>
+        </form>
         <div id="order">
             <a 
                 href="https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=610fe6d385269f6b88f6259b&source=facebook">הזמנת
@@ -91,7 +92,8 @@
         </div>
 
     </div>
-    <footer id="footerProfile">
+    <div  id="footerProfile">
+       <footer class="footer1">
         <p>
             עקבו אחרינו ברשתות החברתיות
         </p>
@@ -99,7 +101,9 @@
         <img class="icon2" src="../static/twitter.png">
         <img class="icon2" src="../static/whatsapp (1).png">
 
-    </footer>
+    </footer>     
+    </div>
+
 </body>
 
 </html>
