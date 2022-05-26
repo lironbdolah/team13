@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 #preBody{
     background-color: #fff7e6;
     text-align: center;
 
   }
+=======
+
+>>>>>>> 6d0fb558f6b98363e20d2b43647b1c2b0c455fb2
   
   :root{
       --orange1: #fff7e6;
@@ -132,13 +136,23 @@
   }
   
   #combo-div{
+<<<<<<< HEAD
+=======
+  padding-top: 50px;
+>>>>>>> 6d0fb558f6b98363e20d2b43647b1c2b0c455fb2
   width: 250px;
   }
   
   #combo_box{
+<<<<<<< HEAD
       padding-top: 40px;
       width: 250px;
         margin: 0 auto;
+=======
+      padding-top: 100px;
+      width: 250px;
+  margin: 0 auto;
+>>>>>>> 6d0fb558f6b98363e20d2b43647b1c2b0c455fb2
   }
 
   #header2{
@@ -155,6 +169,7 @@
     font-family:FirstFont;
   }
  
+<<<<<<< HEAD
   .footer1{
       text-align: center;
   }
@@ -162,6 +177,12 @@
   #footerPre{
       padding-top: 100px;
   }
+=======
+  #footer1{
+      padding-top: 400px;
+      text-align: center;
+  }
+>>>>>>> 6d0fb558f6b98363e20d2b43647b1c2b0c455fb2
   
   #homePageBody {
       background-image: url("../static/backround_image.png");
@@ -377,14 +398,22 @@
 /* username, mail, password and phone inputs */
 .big_input{
     border-radius: 5px;
+<<<<<<< HEAD
     width: 350px;
+=======
+    width: 360px;
+>>>>>>> 6d0fb558f6b98363e20d2b43647b1c2b0c455fb2
     
 }
 
 /* age and sex inputs */
 .small_input{
     border-radius: 5px;
+<<<<<<< HEAD
     width: 45px;
+=======
+    width: 60px;
+>>>>>>> 6d0fb558f6b98363e20d2b43647b1c2b0c455fb2
     
 }
 
@@ -591,10 +620,21 @@
       border: 1px;
       margin: 10px 100px 50px 120px;
       border-radius: 20px;
+<<<<<<< HEAD
 
   }
   #bussiness-reviews {
       padding-right: 25px;    
+=======
+      overflow:hidden; 
+      overflow-y:scroll;
+      max-height:100px;
+
+  }
+  #bussiness-reviews {
+      padding-right: 25px; 
+      
+>>>>>>> 6d0fb558f6b98363e20d2b43647b1c2b0c455fb2
   }
 
   #title-1 {
@@ -705,6 +745,7 @@
     height: 200px;
     opacity: 80%;
 
+<<<<<<< HEAD
 }
 @keyframes liquidAnime {
     0% {
@@ -957,4 +998,6 @@
         margin: 0 auto;
         margin-top: 100px;
     }
+=======
+>>>>>>> 6d0fb558f6b98363e20d2b43647b1c2b0c455fb2
 }
