@@ -33,7 +33,7 @@
     </div>
     <div id="mainDiv">
         <span id="formInput">
-            <form id="form" action="URL" method="post" onsubmit="alert('פרטיך נשמרו, נחזור אליך בהקדם!');">
+            <form id="form" action="URL" method="post" name="contact_form" onsubmit="return contact_validation(document.contact_form.email,document.contact_form.phoneNumber);">
                 <ul>
                     <input class="listInputBox" type="text" placeholder="שם מלא *" id="fname" name="fname"
                         autocomplete="on" required /> <br> <br>

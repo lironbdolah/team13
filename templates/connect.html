@@ -29,14 +29,14 @@
         <h1 id="header3"> התחברות</h1>
     </span>
 
-    <form id="connect_border" action="../templates/homeHTML.html" method="post">
+    <form id="connect_border" action="../templates/homeHTML.html" method="post" name="connect_form" onsubmit="return connect_validation(document.connect_form.pass,document.connect_form.name);">
         <label class="username" >שם משתמש:</label>
         <input type="text" class="input" id="name" name="name" minlength="2" autocomplete="on" required>
 
         <label class="password">סיסמה:</label>
         <input type="text" class="input" id="pass" name="pass" minlength="2" autocomplete="on" required>
 
-        <button type="submit"  id="send_button" name="send_button"  >שלח</button>
+        <button type="submit"  id="send_button" name="send_button">שלח</button>
         <a href="" class="forgot_password">שכחתי סיסמה </a>
     </form>
 
