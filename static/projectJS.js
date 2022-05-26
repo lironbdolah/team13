@@ -121,6 +121,12 @@ function checkmail(mail){
 
 function connect_validation(pass,name)
 { 
+    
+    if(checkuser(name.value)!='good user'){
+        alert(checkuser(name.value))
+        return false;
+    }
+
     //check password
     var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
     if(!pass.value.match(passw)) 
@@ -129,10 +135,7 @@ function connect_validation(pass,name)
             return false;
         }
     
-    if(checkuser(name.value)!='good user'){
-        alert(checkuser(name.value))
-        return false;
-    }
+    
 }
 
 
@@ -142,27 +145,28 @@ function connect_validation(pass,name)
 
 function signup_validation(pass,name,mail,phone,age)
 {
+
+    if(checkuser(name.value)!='good user'){
+        alert(checkuser(name.value))
+        return false;
+        }
+
+    if (checkmail(mail.value)=='bad email')
+    {
+        alert('כתובת המייל אינה תקינה')
+        return false;
+    }
+
     var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
     if(!pass.value.match(passw)) 
         { 
         alert(checkPwd(pass.value))
         return false;
         }
-    
-    if(checkuser(name.value)!='good user'){
-        alert(checkuser(name.value))
-        return false;
-        }
-    
-    if (checkmail(mail.value)=='bad email')
-    {
-        alert('כתובת המילל אינה תקינה')
-        return false;
-    }
 
     var phoneno = /^\d{10}$/;
     if(!phone.value.match(phoneno)){
-        alert("המספר צריך לכלול 10 ספרות ורק ספרות");
+        alert("מספר הטלפון צריך לכלול 10 ספרות ורק ספרות");
         return false;
     }
     if(age.value < 18){
@@ -173,14 +177,17 @@ function signup_validation(pass,name,mail,phone,age)
 
 // ################## contact_HTML_page_validation ################## //
 function contact_validation(mail,phone){
-    if (checkmail(mail.value)=='bad email')
-    {
-        alert('כתובת המילל אינה תקינה')
-        return false;
-    }
+
     var phoneno = /^\d{10}$/;
     if(!phone.value.match(phoneno)){
-        alert("המספר צריך לכלול 10 ספרות ורק ספרות");
+        alert("מספר הטלפון צריך לכלול 10 ספרות ורק ספרות");
         return false;
     }
+
+    if (checkmail(mail.value)=='bad email')
+    {
+        alert('כתובת המייל אינה תקינה')
+        return false;
+    }
+    
 }
