@@ -11,17 +11,10 @@ function comboFunction(object) {
     const comboElement = document.getElementById('combo-div');
     const selcetOption = object.value;
     if(selcetOption === 'בית עסק לפי מיקום') {
-<<<<<<< HEAD
         comboElement.innerHTML = '<form id="combo_box" action="../templates/projectHTML.html" method="post"> <p>הגדר טווח חיפוש רצוי:  </p> <input type="range" min="1" max="20" class="slider" id="myRange" value="1" oninput="this.nextElementSibling.value = this.value"> Km <output> 1</output><p><button id="submit" type="submit">יאללה תמצאו לי</button></p></form>'
     }
     else {
         comboElement.innerHTML = '<form id="combo_box" action="../templates/profileHTML.html" method="post"><button id="search" type="submit"></a>חפש</button> <input type="text" class="InputBox" placeholder="הכנס מקום בילוי רצוי..." id="searchInput" name="searchInput" autocomplete="on" required/></form>  <br>'
-=======
-        comboElement.innerHTML = '<p>הגדר טווח חיפוש רצוי:  </p> <input type="range" min="1" max="20" class="slider" id="myRange" value="1" oninput="this.nextElementSibling.value = this.value"> Km <output> 1</output><p><button id="submit" type="submit">יאללה תמצאו לי</button></p> '
-    }
-    else {
-        comboElement.innerHTML = '<button id="search" type="submit">חפש</button> <input type="text" class="InputBox" placeholder="הכנס מקום בילוי רצוי..." id="searchInput" name="searchInput" autocomplete="on" required/>  <br>'
->>>>>>> 6d0fb558f6b98363e20d2b43647b1c2b0c455fb2
     }
 }
 
@@ -128,15 +121,6 @@ function checkmail(mail){
 
 function connect_validation(pass,name)
 { 
-<<<<<<< HEAD
-=======
-    
-    if(checkuser(name.value)!='good user'){
-        alert(checkuser(name.value))
-        return false;
-    }
-
->>>>>>> 6d0fb558f6b98363e20d2b43647b1c2b0c455fb2
     //check password
     var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
     if(!pass.value.match(passw)) 
@@ -145,14 +129,10 @@ function connect_validation(pass,name)
             return false;
         }
     
-<<<<<<< HEAD
     if(checkuser(name.value)!='good user'){
         alert(checkuser(name.value))
         return false;
     }
-=======
-    
->>>>>>> 6d0fb558f6b98363e20d2b43647b1c2b0c455fb2
 }
 
 
@@ -162,28 +142,12 @@ function connect_validation(pass,name)
 
 function signup_validation(pass,name,mail,phone,age)
 {
-<<<<<<< HEAD
-=======
-
-    if(checkuser(name.value)!='good user'){
-        alert(checkuser(name.value))
-        return false;
-        }
-
-    if (checkmail(mail.value)=='bad email')
-    {
-        alert('כתובת המייל אינה תקינה')
-        return false;
-    }
-
->>>>>>> 6d0fb558f6b98363e20d2b43647b1c2b0c455fb2
     var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
     if(!pass.value.match(passw)) 
         { 
         alert(checkPwd(pass.value))
         return false;
         }
-<<<<<<< HEAD
     
     if(checkuser(name.value)!='good user'){
         alert(checkuser(name.value))
@@ -199,12 +163,6 @@ function signup_validation(pass,name,mail,phone,age)
     var phoneno = /^\d{10}$/;
     if(!phone.value.match(phoneno)){
         alert("המספר טלפון צריך לכלול 10 ספרות ורק ספרות");
-=======
-
-    var phoneno = /^\d{10}$/;
-    if(!phone.value.match(phoneno)){
-        alert("מספר הטלפון צריך לכלול 10 ספרות ורק ספרות");
->>>>>>> 6d0fb558f6b98363e20d2b43647b1c2b0c455fb2
         return false;
     }
     if(age.value < 18){
@@ -215,7 +173,6 @@ function signup_validation(pass,name,mail,phone,age)
 
 // ################## contact_HTML_page_validation ################## //
 function contact_validation(mail,phone){
-<<<<<<< HEAD
     if (checkmail(mail.value)=='bad email')
     {
         alert('כתובת המייל אינה תקינה, שים לב שעליה לכלול: טקסט, "@" וסיומת תקינה')
@@ -226,19 +183,4 @@ function contact_validation(mail,phone){
         alert("המספר טלפון צריך לכלול 10 ספרות ורק ספרות");
         return false;
     }
-=======
-
-    var phoneno = /^\d{10}$/;
-    if(!phone.value.match(phoneno)){
-        alert("מספר הטלפון צריך לכלול 10 ספרות ורק ספרות");
-        return false;
-    }
-
-    if (checkmail(mail.value)=='bad email')
-    {
-        alert('כתובת המייל אינה תקינה')
-        return false;
-    }
-    
->>>>>>> 6d0fb558f6b98363e20d2b43647b1c2b0c455fb2
 }
