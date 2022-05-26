@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect</title>
+    <link rel="stylesheet" href="../static/projectCSS.css">
+    <script defer src="../static/projectJS.js"></script>
+</head>
+<body id="homePageBody">
+    <header class="header">
+        <img class="logo_image" src="../static/logo_small (1).png">
+    </header>
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="list-item"><a href="#" onclick="alert('יש צורך להתחבר טרם כניסה למערכת');">צור קשר</a></li>
+            <li class="list-item"><a href="#" onclick="alert('יש צורך להתחבר טרם כניסה למערכת');">המלצות</a></li>
+            <li class="list-item"><a href="#" onclick="alert('יש צורך להתחבר טרם כניסה למערכת');">בתי עסק בב"ש</a></li>
+            <li class="list-item"><a href="#" onclick="alert('יש צורך להתחבר טרם כניסה למערכת');">דף הבית</a></li>
+            <span class="login_image">
+                <a href="../templates/preview.html">
+                    <img src="../static/log_in.png">
+                </a>
+            </span>
+        </ul>
+    </nav>
+    <span>
+        <h1 id="header3"> התחברות</h1>
+    </span>
+
+    <form id="connect_border" action="../templates/homeHTML.html" method="post" name="connect_form" onsubmit="return connect_validation(document.connect_form.pass,document.connect_form.name);">
+        <label class="username" >שם משתמש:</label>
+        <input type="text" class="input" id="name" name="name" minlength="2" autocomplete="on" required>
+
+        <label class="password">סיסמה:</label>
+        <input type="text" class="input" id="pass" name="pass" minlength="2" autocomplete="on" required>
+
+        <button type="submit"  id="send_button" name="send_button">שלח</button>
+        <a href="" class="forgot_password">שכחתי סיסמה </a>
+    </form>
+
+
+     <footer id="footer1"> 
+        <p>
+            עקבו אחרינו ברשתות החברתיות
+        </p>
+            <img class="icon2" src="../static/instagram.png">
+            <img class="icon2" src="../static/twitter.png">
+            <img class="icon2" src="../static/whatsapp (1).png">
+        
+     </footer>
+</body>
+</html>

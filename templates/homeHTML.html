@@ -12,34 +12,33 @@
     <header class="header">
         <img class="logo_image" src="../static/logo_small (1).png">
     </header>
-    <nav class="nav">
+       <nav class="nav">
         <ul class="nav-list">
             <li class="list-item"><a href="../templates/contactHTML.html">צור קשר</a></li>
             <li class="list-item"><a href="../templates/month_reccomendation.html">המלצות</a></li>
             <li class="list-item"><a href="../templates/businesses.html">בתי עסק בב"ש</a></li>
             <li class="list-item"><a href="../templates/homeHTML.html">דף הבית</a></li>
             <span class="login_image">
-                <a href="#">
+                <a href="../templates/preview.html">
                     <img src="../static/log_in.png">
                 </a>
             </span>
         </ul>
+
     </nav>
  <span>
     <h1 id="header2"> Cheers</h1>
  </span>
- <div class="divRecommend">
-    <h1 id="recommend">
-        המלצות עבורך:<br>
-    </h1>
-    <div class="recommend-border" >
-       <ol>
-           <li><a href="https://visitbr7.co.il/food/%D7%9E%D7%99%D7%9C%D7%91%D7%94/">מילבה</a></li><br>
-           <li><a href="https://easy.co.il/page/10092444">פרידה</a></li><br>
-           <li><a href="https://easy.co.il/page/9217498">רוזה</a></li>
-       </ol>
-    </div>
-</div>
+ <div id="combo_box">
+    <select name="combo" id="combo" onChange="comboFunction(this)">
+        <option value="" selected disabled hidden>בחר אופן שימוש</option>
+        <option value="בית עסק לפי מיקום">בית עסק לפי מיקום</option>
+        <option value="בית עסק ספציפי">בית עסק ספציפי</option>
+    </select><br>
+    <div id="combo-div">
+    <div class="combp-slidecontainer">
+    </div></div>
+ </div>
      <footer id="footer1"> 
         <p>
             עקבו אחרינו ברשתות החברתיות

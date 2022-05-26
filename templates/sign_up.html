@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <link rel="stylesheet" href="../static/projectCSS.css">
+    <script defer src="../static/projectJS.js"></script>
+</head>
+<body id="homePageBody">
+    <header class="header">
+        <img class="logo_image" src="../static/logo_small (1).png">
+    </header>
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="list-item"><a href="#" onclick="alert('יש צורך להתחבר טרם כניסה למערכת');">צור קשר</a></li>
+            <li class="list-item"><a href="#" onclick="alert('יש צורך להתחבר טרם כניסה למערכת');">המלצות</a></li>
+            <li class="list-item"><a href="#" onclick="alert('יש צורך להתחבר טרם כניסה למערכת');">בתי עסק בב"ש</a></li>
+            <li class="list-item"><a href="#" onclick="alert('יש צורך להתחבר טרם כניסה למערכת');">דף הבית</a></li>
+            <span class="login_image">
+                <a href="../templates/preview.html">
+                    <img src="../static/log_in.png">
+                </a>
+            </span>
+        </ul>
+
+    </nav>
+    <span>
+        <h1 id="header3">הרשמה</h1>
+    </span>
+    <form id="sign_up_border" action="../templates/homeHTML.html" method="post" name="sign_up_form" onsubmit="return signup_validation(document.sign_up_form.password1,document.sign_up_form.username2,document.sign_up_form.mail2,document.sign_up_form.phone1,document.sign_up_form.age_label1);">
+
+        <label class="username">שם משתמש:</label>
+        <input type="text" class="big_input" id="username2" name="username2" autocomplete="on" required>
+
+        <label class="mail" >מייל:</label>
+        <input type="email" class="big_input" id="mail2" name="mail2" autocomplete="on" required>
+
+        <label class="password">סיסמה:</label>
+        <input type="password" class="big_input" id="password1" name="password1"  autocomplete="on" required>
+
+        
+        <label class="phone">טלפון:</label>
+        <input type="phone" class="big_input" id="phone1" name="phone1"  autocomplete="on" required >
+
+        <section class="lower_inputs">  
+            <div class="age">  
+                <label class="age_label">גיל:</label>
+                <input type="number" class="small_input" id="age_label1" name="age_label1" autocomplete="on" required>
+            </div> 
+            <div class="gender">  
+                <label class="gender_label">מין:</label>
+                <input type="text" class="small_input"  id="gender_label1" name="gender_label1" autocomplete="on" required>
+            </div>
+        </section>
+
+        <button id="sign_up_send_button" type="submit">שלח</button>
+    </form>
+
+
+     <footer id="footer1"> 
+        <p>
+            עקבו אחרינו ברשתות החברתיות
+        </p>
+            <img class="icon2" src="../static/instagram.png">
+            <img class="icon2" src="../static/twitter.png">
+            <img class="icon2" src="../static/whatsapp (1).png">
+        
+     </footer>
+</body>
+</html>

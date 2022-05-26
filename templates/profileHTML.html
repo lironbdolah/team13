@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profileBusinessPage</title>
+    <link rel="stylesheet" href="../static/projectCSS.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="../static/projectJS.js"></script>
+</head>
+
+<body id="profileBusinessPage">
+    <header class="header">
+        <img class="logo_image" src="../static/logo_small (1).png">
+    </header>
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="list-item"><a href="../templates/contactHTML.html">צור קשר</a></li>
+            <li class="list-item"><a href="../templates/month_reccomendation.html">המלצות</a></li>
+            <li class="list-item"><a href="../templates/businesses.html">בתי עסק בב"ש</a></li>
+            <li class="list-item"><a href="../templates/homeHTML.html">דף הבית</a></li>
+            <span class="login_image">
+                <a href="../templates/preview.html">
+                    <img src="../static/log_in.png">
+                </a>
+            </span>
+        </ul>
+
+    </nav>
+    <span>
+        <h1 id="BusinessName"> פרידה</h1>
+    </span>
+    <div id="business-card">
+        <div id="title-1">
+            <h2>שעות happy hour:</h2>
+            <h2 id="title-1-2">מה שווה אצלנו?</h2>
+        </div>
+        <div id="details">
+            <p id="open-hours">12:00-19:00</p>
+            <ol id="drinks-sales">
+                <li><p id="drinks">4 צ'ייסרים ב 20 שח</p></li>
+                <li><p id="drinks">50% על האוכל</p></li>
+                <li><p id="drinks">1 פלוס 1 על היין</p></li>
+            </ol>
+        </div>
+        <div id="title-3">
+            <h2>חברים מספרים:</h2>
+        </div>
+        <div id="stars">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+        </div>
+        <div id="reviews">
+                    <ol id="bussiness-reviews">
+                        <li><p>נהניתי מכל רגע. אוכל זול וקוקטלים פצצה!</p></li>
+                        <li><p>הערב הכי מהנה שהיה לי הרבה זמן. התפנקנו ולא כאב בכיס</p></li>
+                        <li><p>מנות גדולות ומעניינות</p></li>
+                    </ol>
+        </div>
+        <div id="title-4">
+            <h2>רוצה לפרגן/ לעדכן:</h2>
+        </div>
+        <div id="freeTxt">
+            <form> 
+                <input type="text" id="write" name="write">
+            </form>
+        </div>
+        <div id="title-5">
+            <h2>דרג:</h2>
+        </div>
+        <div id="stars-2">
+            <span id= "star1" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
+            <span id= "star2" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
+            <span id= "star3" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
+            <span id= "star4" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
+            <span id= "star5" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
+        </div>
+        <div>
+            <button id="button-1">צרף ביקורת</button>
+        </div>
+        <div id="order">
+            <a 
+                href="https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=610fe6d385269f6b88f6259b&source=facebook">הזמנת
+                מקום
+            </a>
+        </div>
+
+    </div>
+    <footer id="footerProfile">
+        <p>
+            עקבו אחרינו ברשתות החברתיות
+        </p>
+        <img class="icon2" src="../static/instagram.png">
+        <img class="icon2" src="../static/twitter.png">
+        <img class="icon2" src="../static/whatsapp (1).png">
+
+    </footer>
+</body>
+
+</html>
