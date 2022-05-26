@@ -140,7 +140,7 @@
   }
   
   #combo_box{
-      padding-top: 40px;
+      padding-top: 100px;
       width: 250px;
       margin: 0 auto;
   }
@@ -156,11 +156,19 @@
     font-size: 100px;
     display: inline;
     color: var(--orange7);
-    font-family:FirstFont;
+    font-family: FirstFont;
   }
  
   .footer1{
-      text-align: center;
+    text-align: center;
+  }
+
+  .footer1-home {
+    padding-top: 350px;
+  }
+
+  .footer1-my-location {
+    padding-top: 250px;
   }
 
   #footerPre{
@@ -171,27 +179,29 @@
       background-image: url("../static/backround_image.png");
       background-repeat: no-repeat;
       text-align: center;
-      background-position: center;
+      background-attachment: fixed;
+      background-position: center; 
+      margin: 0 auto;
   }
   
-
   .icon2 {
       height: 20px;
   }
-  
   
   @font-face {
       font-family: FirstFont;
       src: url(../static/ganclm_bold-webfont.ttf);
   }
+
   @font-face {
       font-family: HeaderFont;
       src: url(../static/Panipuri.ttf);
   }
+
   @font-face {
     font-family: PageFont;
     src: url(../static/MPLUS1p-Medium.ttf);
-}
+  }
 
   
 /* ########### preview buttons settings ########### */
@@ -933,7 +943,30 @@
   }
   
 
-  /* omerHAMISHI */
+.header {
+    font-size: 15px;
+    display: inline;
+    color: var(--black);
+    font-family: HeaderFont;
+}
+
+.headerLeft {
+    float: left;
+    padding-left: 10px;
+    background-color: var(--orange5);
+    padding-top: 4px;
+    height: 60px;
+}
+
+.icon {
+    height: 40px;
+    padding-top: 30%;
+
+}
+
+#footerContact{
+  padding-top: 500px;
+}
 
 
 
@@ -958,6 +991,13 @@
 #stars-2 {
   margin: 10px 50px 10px 0px;
 }   
+}
+
+@media only screen and (max-width: 1000px) {
+  #mainDiv {
+      padding-top: 90px;
+      padding-right: 0%;
+  }
 }
 
 @media screen and (max-width: 900px){
@@ -1017,6 +1057,54 @@
   #stars-2 {
     margin: 10px 50px 10px 0px;
   }   
+
+  #mainDiv {
+      padding-top: 90px;
+      display: inline;
+      text-align: right;
+  }
+
+  #infoParagraph {
+      background-color: #f1cca6;
+      border-style: solid;
+      float: right;
+      border-radius: 10px;
+      width: 300px;
+      height: 128px;
+      opacity: 80%;
+      margin: 0 auto;
+      top: 30px;
+      display: inline;
+      padding-right: 0%;
+  }
+
+  #send {
+      float: right;
+      text-align: right;
+      margin-right: 0 auto;
+      display: inline;
+      padding-right: 0%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .nav {
+      font-size: 12px;
+  }
+
+  #header3 {
+      font-size: 60px;
+  }
+
+  #connect_border {
+      margin-top: 50px;
+  }
+
+  #mainDiv {
+      padding-top: 90px;
+      padding-right: 20px;
+  }
+  
 }
 
 @media screen and (max-width: 585px){
@@ -1047,8 +1135,7 @@
   #stars {
       margin: 10px 140px 10px 140px;
   }
-}
-@media screen and (max-width: 585px){
+
   #title-1-1{
       font-size: 16px;
   } 

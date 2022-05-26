@@ -11,10 +11,29 @@ function comboFunction(object) {
     const comboElement = document.getElementById('combo-div');
     const selcetOption = object.value;
     if(selcetOption === 'בית עסק לפי מיקום') {
-        comboElement.innerHTML = '<form id="combo_box" action="../templates/projectHTML.html" method="post"> <p>הגדר טווח חיפוש רצוי:  </p> <input type="range" min="1" max="20" class="slider" id="myRange" value="1" oninput="this.nextElementSibling.value = this.value"> Km <output> 1</output><p><button id="submit" type="submit">יאללה תמצאו לי</button></p></form>'
+        comboElement.innerHTML = '<form id="combo_box" action="../templates/projectHTML.html" method="post" onsubmit="event.preventDefault(); return sendMyLocation(this);"> <p>הגדר טווח חיפוש רצוי:  </p> <input type="range" name=userRange min="1" max="20" class="slider" id="myRange" value="1" oninput="this.nextElementSibling.value = this.value"> Km <output> 1</output><p><button id="submit" type="submit">יאללה תמצאו לי</button></p></form>'
     }
     else {
         comboElement.innerHTML = '<form id="combo_box" action="../templates/profileHTML.html" method="post"><button id="search" type="submit"></a>חפש</button> <input type="text" class="InputBox" placeholder="הכנס מקום בילוי רצוי..." id="searchInput" name="searchInput" autocomplete="on" required/></form>  <br>'
+    }
+}
+
+const sendMyLocation = (locationForm) => {
+    let positionObject;
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        console.log("Geolocation is not supported by this browser.")
+    }
+
+    function showPosition(position) {
+        positionObject = {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+            userRange: locationForm.userRange.value 
+        }
+        console.log("positionObject =>", positionObject)
     }
 }
 

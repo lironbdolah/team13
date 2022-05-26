@@ -11,29 +11,33 @@
 </head>
 
 <body id="homePageBody">
-    <header class="header">
+
+    <span class="headerLeft">
+        <header class="header">
+            <a href="../templates/preview.html">
+                <img class="icon" src="../static/log_in.png">
+            </a>
+        </header>
+
+    </span>
+    <span>
         <img class="logo_image" src="../static/logo_small (1).png">
-    </header>
+    </span>
     <nav class="nav">
         <ul class="nav-list">
             <li class="list-item"><a href="../templates/contactHTML.html">צור קשר</a></li>
             <li class="list-item"><a href="../templates/month_reccomendation.html">המלצות</a></li>
             <li class="list-item"><a href="../templates/businesses.html">בתי עסק בב"ש</a></li>
             <li class="list-item"><a href="../templates/homeHTML.html">דף הבית</a></li>
-            <span class="login_image">
-                <a href="../templates/preview.html">
-                    <img src="../static/log_in.png">
-                </a>
-            </span>
         </ul>
-
     </nav>
     <div>
         <h1 id="header3"> צור קשר</h1>
     </div>
     <div id="mainDiv">
         <span id="formInput">
-            <form id="form" action="URL" method="post" name="contact_form" onsubmit="return contact_validation(document.contact_form.email,document.contact_form.phoneNumber);">
+            <form id="form" action="URL" method="post" name="contact_form"
+                onsubmit="return contact_validation(document.contact_form.email,document.contact_form.phoneNumber);">
                 <ul>
                     <input class="listInputBox" type="text" placeholder="שם מלא *" id="fname" name="fname"
                         autocomplete="on" required /> <br> <br>
@@ -41,35 +45,37 @@
                         name="phoneNumber" required />
                     <br><br>
                     <input class="listInputBox" type="email" placeholder="אימייל *" id="email" name="email"
-                        autocomplete="on" required /> <br> <br>  
-                        <div id="send">                 
+                        autocomplete="on" required /> <br> <br>
+                    <div id="send">
                         <input type="checkbox" id="agreeDetails" name="agreeDetails" required>
-                        <label for="">אני מאשר/ת בזאת קבלת חומר פרסומי שישלח אליי </label> <br><br>               
-                        <button type="submit" id="contact_submit_button">שליחה</button>
-                        </div> 
+                        <label for="">אני מאשר/ת בזאת קבלת חומר פרסומי שישלח אליי </label> <br><br>
+                        <button type="submit" id="contact_submit_button">שליחה</button> <br><br>
+                    </div>
                 </ul>
             </form>
         </span>
-        <div>
-            <p id="infoParagraph">
-                פרטי התקשרות<br>
-                פנה אלינו באמצעות טלפון או דוא"ל<br>
-                HappyBuzz@gmail.com <br>
-                בין השעות 9:00-19:00 <br>
-                +972-501233212
-            </p>
+        <!-- <div> -->
+        <p id="infoParagraph">
+            פרטי התקשרות<br>
+            פנה אלינו באמצעות טלפון או דוא"ל<br>
+            HappyBuzz@gmail.com <br>
+            בין השעות 9:00-19:00 <br>
+            +972-501233212
+        </p>
+        <!-- </div> -->
+
+        <div id="footerContact">
+            <footer class="footer1">
+                <p>
+                    עקבו אחרינו ברשתות החברתיות
+                </p>
+                <img class="icon2" src="../static/instagram.png">
+                <img class="icon2" src="../static/twitter.png">
+                <img class="icon2" src="../static/whatsapp (1).png">
+            </footer>   
         </div>
 
-
-        <footer id="footer1">
-            <p>
-                עקבו אחרינו ברשתות החברתיות
-            </p>
-            <img class="icon2" src="../static/instagram.png">
-            <img class="icon2" src="../static/twitter.png">
-            <img class="icon2" src="../static/whatsapp (1).png">
-
-        </footer>
+    </div>
 </body>
 
 </html>
