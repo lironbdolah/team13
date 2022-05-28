@@ -7,14 +7,36 @@ forEach(link => {
     }
 });
 
+
+
 function comboFunction(object) {
     const comboElement = document.getElementById('combo-div');
     const selcetOption = object.value;
     if(selcetOption === 'בית עסק לפי מיקום') {
-        comboElement.innerHTML = '<p>הגדר טווח חיפוש רצוי:  </p> <input type="range" min="1" max="20" class="slider" id="myRange" value="1" oninput="this.nextElementSibling.value = this.value"> Km <output> 1</output><p><button id="submit" type="submit">יאללה תמצאו לי</button></p> '
+        comboElement.innerHTML = '<form id="combo_box" action="../templates/projectHTML.html" method="post" onsubmit="event.preventDefault(); return sendMyLocation(this);"> <p>הגדר טווח חיפוש רצוי:  </p> <input type="range" name=userRange min="1" max="20" class="slider" id="myRange" value="1" oninput="this.nextElementSibling.value = this.value"> Km <output> 1</output><p><button id="submit" type="submit">יאללה תמצאו לי</button></p></form>'
     }
     else {
-        comboElement.innerHTML = '<button id="search" type="submit">חפש</button> <input type="text" class="InputBox" placeholder="הכנס מקום בילוי רצוי..." id="searchInput" name="searchInput" autocomplete="on" required/>  <br>'
+        comboElement.innerHTML = '<form id="combo_box" action="../templates/profileHTML.html" method="post"><button id="search" type="submit"></a>חפש</button> <input type="text" class="InputBox" placeholder="הכנס מקום בילוי רצוי..." id="searchInput" name="searchInput" autocomplete="on" required/></form>  <br>'
+    }
+}
+
+
+const sendMyLocation = (locationForm) => {
+    let positionObject;
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        console.log("Geolocation is not supported by this browser.")
+    }
+
+    function showPosition(position) {
+        positionObject = {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+            userRange: locationForm.userRange.value 
+        }
+        console.log("positionObject =>", positionObject)
     }
 }
 
@@ -58,6 +80,29 @@ const deleteAllStars = () => {
     star3.classList.remove("checked");
     star4.classList.remove("checked");
     star5.classList.remove("checked");
+}
+
+const submitReview = () => {
+    const textValue = document.getElementById("write")?.value;
+    const numOfStars = getNumOfStars("stars-2");
+    
+    const submitObject = {
+        textValue: textValue,
+        numOfStars: numOfStars
+    }
+}
+
+const getNumOfStars = (divId) => {
+    let numOfStars = 0;
+    const starsElement = document.getElementById(divId).getElementsByTagName("*");;
+
+    for(var i = 0; i < starsElement.length; i++){
+        if(starsElement[i]?.classList.contains("checked")){
+            numOfStars++;
+        }
+    }
+
+    return numOfStars;
 }
 
 
@@ -121,12 +166,6 @@ function checkmail(mail){
 
 function connect_validation(pass,name)
 { 
-    
-    if(checkuser(name.value)!='good user'){
-        alert(checkuser(name.value))
-        return false;
-    }
-
     //check password
     var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
     if(!pass.value.match(passw)) 
@@ -135,7 +174,10 @@ function connect_validation(pass,name)
             return false;
         }
     
-    
+    if(checkuser(name.value)!='good user'){
+        alert(checkuser(name.value))
+        return false;
+    }
 }
 
 
@@ -145,28 +187,27 @@ function connect_validation(pass,name)
 
 function signup_validation(pass,name,mail,phone,age)
 {
-
-    if(checkuser(name.value)!='good user'){
-        alert(checkuser(name.value))
-        return false;
-        }
-
-    if (checkmail(mail.value)=='bad email')
-    {
-        alert('כתובת המייל אינה תקינה')
-        return false;
-    }
-
     var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
     if(!pass.value.match(passw)) 
         { 
         alert(checkPwd(pass.value))
         return false;
         }
+    
+    if(checkuser(name.value)!='good user'){
+        alert(checkuser(name.value))
+        return false;
+        }
+    
+    if (checkmail(mail.value)=='bad email')
+    {
+        alert('כתובת המייל אינה תקינה, עליה להיות בפורמט xxx@yyy.zzz, כאשר הסיומת יכולה להכיל 2 או 3 אותיות')
+        return false;
+    }
 
     var phoneno = /^\d{10}$/;
     if(!phone.value.match(phoneno)){
-        alert("מספר הטלפון צריך לכלול 10 ספרות ורק ספרות");
+        alert("המספר טלפון צריך לכלול 10 ספרות ורק ספרות");
         return false;
     }
     if(age.value < 18){
@@ -177,17 +218,14 @@ function signup_validation(pass,name,mail,phone,age)
 
 // ################## contact_HTML_page_validation ################## //
 function contact_validation(mail,phone){
-
-    var phoneno = /^\d{10}$/;
-    if(!phone.value.match(phoneno)){
-        alert("מספר הטלפון צריך לכלול 10 ספרות ורק ספרות");
-        return false;
-    }
-
     if (checkmail(mail.value)=='bad email')
     {
-        alert('כתובת המייל אינה תקינה')
+        alert('כתובת המייל אינה תקינה, עליה להיות בפורמט xxx@yyy.zzz, כאשר הסיומת יכולה להכיל 2 או 3 אותיות')
         return false;
     }
-    
+    var phoneno = /^\d{10}$/;
+    if(!phone.value.match(phoneno)){
+        alert("המספר טלפון צריך לכלול 10 ספרות ורק ספרות");
+        return false;
+    }
 }
