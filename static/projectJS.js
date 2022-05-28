@@ -20,7 +20,6 @@ function comboFunction(object) {
     }
 }
 
-
 const sendMyLocation = (locationForm) => {
     let positionObject;
 
