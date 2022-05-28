@@ -140,7 +140,7 @@
   }
   
   #combo_box{
-      padding-top: 100px;
+      padding-top: 50px;
       width: 250px;
       margin: 0 auto;
   }
@@ -164,7 +164,7 @@
   }
 
   .footer1-home {
-    padding-top: 350px;
+    padding-top: 300px;
   }
 
   .footer1-my-location {
@@ -508,9 +508,14 @@
     opacity: 80%;
 }
 
-#mainDiv{
+  #mainDiv{
+    display: flex;
     padding-top: 90px;
-    padding-right: 200px;
+    /* position: absolute; */
+    justify-content: center;
+    /* padding-right: 400px; */
+
+
 } 
 #send{
     width: 700px;
@@ -965,7 +970,7 @@
 }
 
 #footerContact{
-  padding-top: 500px;
+  padding-top: 100px;
 }
 
 
