@@ -145,7 +145,7 @@ function checkuser(str) {
     } else if (str.length > 20) {
         return("שם משתמש ארוך מדי");
     } else if (str.search(/[a-zA-Z]/) == -1) {
-        return("שם המשתמש חייב להכיל אותיות");
+        return(" שם המשתמש חייב להכיל אותיות באנגלית בלבד");
     } else if (str.search(/[^a-zA-Z0-9\!\@\#\$\%\^\&\*\(\)\_\+]/) != -1) {
         return("אסור סימנים מיוחדים בשם משתמש");
     }

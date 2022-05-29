@@ -450,8 +450,7 @@
 .milba:hover  {
     opacity: 70%;
 }
-
-.bbb{
+.bbb {
     display: inline-block;
     margin-top: 8px; 
     border: var(--orange6);
@@ -464,6 +463,9 @@
 
 .bbb:hover  {
     opacity: 70%;
+}
+#footerReccomend {
+  padding-top: 150px;
 }
 
 
