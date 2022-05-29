@@ -35,7 +35,8 @@ const sendMyLocation = (locationForm) => {
             longitude: position.coords.longitude,
             userRange: locationForm.userRange.value 
         }
-        console.log("positionObject =>", positionObject)
+        console.log("positionObject =>", positionObject);
+        window.location = "../templates/projectHTML.html";
     }
 }
 
