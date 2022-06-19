@@ -5,6 +5,6 @@ import mysql.connector
 profile = Blueprint('profile', __name__, static_folder='static', static_url_path='/profile', template_folder='templates')
 
 # Routes
-@profile.route('/profile')
+@profile.route('/profile', methods=['GET', 'POST'])
 def redirect_profile():
     return render_template('profileHTML.html')

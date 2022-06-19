@@ -1,66 +1,33 @@
-<!DOCTYPE html>
-<html dir="rtl">
+{% extends 'base.html' %}
+{% set title='Reccomend' %}
+{% block title %}
+{{ title }}
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Month Reccomendations</title>
-    <link rel="stylesheet" href="../static/projectCSS.css">
-    <script defer src="../static/projectJS.js"></script>
-</head>
+{% block content %}
+<div id="homePageBody">
 
-<body id="homePageBody">
-    <span class="headerLeft">
-        <header class="header">
-            <a href="../templates/preview.html">
-                <img class="icon" src="../static/log_in.png">
-            </a>
-        </header>
-
-    </span>
-    <span>
-        <img class="logo_image" src="../static/logo_small (1).png">
-    </span>
-    <nav class="nav">
-        <ul class="nav-list">
-            <li class="list-item"><a href="../templates/contactHTML.html">צור קשר</a></li>
-            <li class="list-item"><a href="../templates/month_reccomendation.html">המלצות</a></li>
-            <li class="list-item"><a href="../templates/businesses.html">בתי עסק בב"ש</a></li>
-            <li class="list-item"><a href="../templates/homeHTML.html">דף הבית</a></li>
-        </ul>
-    </nav>
     <span>
         <h1 id="header3">המלצות החודש</h1>
     </span>
 
     <div class="bars_images">
         <div class="link_size">
-            <a href="../templates/profileHTML.html" id="link_size">
-                <img src="../static/frida.png" class="frida">
+            <a href="/profile" id="link_size">
+                <img src="../static/media/frida.png" class="frida">
             </a>
         </div>
         <a href="#">
-            <img class="milba" src="../static/milba.png">
+            <img class="milba" src="../static/media/milba.png">
         </a>
         <a href="#">
-            <img class="bbb" src="../static/bbb.png">
+            <img class="bbb" src="../static/media/bbb.png">
         </a>
     </div>
 
-
     <div id="footerReccomend">
-        <footer class="footer1">
-            <p>
-                עקבו אחרינו ברשתות החברתיות
-            </p>
-            <img class="icon2" src="../static/instagram.png">
-            <img class="icon2" src="../static/twitter.png">
-            <img class="icon2" src="../static/whatsapp (1).png">
-
-        </footer>
+        {{ super() }}
     </div>
 
-</body>
-
-</html>
+</div>
+{% endblock %}

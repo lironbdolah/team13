@@ -1,42 +1,17 @@
-<!DOCTYPE html>
-<html dir="rtl">
+{% extends 'base.html' %}
+{% set title='contact' %}
+{% block title %}
+{{ title }}
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contact</title>
-    <link rel="stylesheet" href="../static/projectCSS.css">
-    <script defer src="../static/projectJS.js"></script>
-</head>
-
-<body id="homePageBody">
-
-    <span class="headerLeft">
-        <header class="header">
-            <a href="../templates/preview.html">
-                <img class="icon" src="../static/log_in.png">
-            </a>
-        </header>
-
-    </span>
-    <span>
-        <img class="logo_image" src="../static/logo_small (1).png">
-    </span>
-    <nav class="nav">
-        <ul class="nav-list">
-            <li class="list-item"><a href="../templates/contactHTML.html">צור קשר</a></li>
-            <li class="list-item"><a href="../templates/month_reccomendation.html">המלצות</a></li>
-            <li class="list-item"><a href="../templates/businesses.html">בתי עסק בב"ש</a></li>
-            <li class="list-item"><a href="../templates/homeHTML.html">דף הבית</a></li>
-        </ul>
-    </nav>
+{% block content %}
+<div id="homePageBody">
     <div>
         <h1 id="header3"> צור קשר</h1>
     </div>
     <div id="mainDiv">
         <span id="formInput">
-            <form id="form" action="URL" method="post" name="contact_form"
+            <form id="form" action="/contact" method="post" name="contact_form"
                 onsubmit="return contact_validation(document.contact_form.email,document.contact_form.phoneNumber);">
                 <ul>
                     <input class="listInputBox" type="text" placeholder="שם מלא *" id="fname" name="fname"
@@ -63,15 +38,7 @@
         </p>
     </div>
     <div id="footerContact">
-        <footer class="footer1">
-            <p>
-                עקבו אחרינו ברשתות החברתיות
-            </p>
-            <img class="icon2" src="../static/instagram.png">
-            <img class="icon2" src="../static/twitter.png">
-            <img class="icon2" src="../static/whatsapp (1).png">
-        </footer>   
+        {{ super() }}
     </div>
-</body>
-
-</html>
+</div>
+{% endblock %}

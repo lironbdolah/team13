@@ -1,90 +1,62 @@
-<!DOCTYPE html>
-<html dir="rtl">
+{% extends 'base.html' %}
+{% set title='businesses' %}
+{% block title %}
+{{ title }}
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Businesses</title>
-    <link rel="stylesheet" href="../static/projectCSS.css">
-    <script defer src="../static/projectJS.js"></script>
-</head>
-
-<body id="homePageBody">
-    <span class="headerLeft">
-        <header class="header">
-            <a href="../templates/preview.html">
-                <img class="icon" src="../static/log_in.png">
-            </a>
-        </header>
-
-    </span>
-    <span>
-        <img class="logo_image" src="../static/logo_small (1).png">
-    </span>
-    <nav class="nav">
-        <ul class="nav-list">
-            <li class="list-item"><a href="../templates/contactHTML.html">צור קשר</a></li>
-            <li class="list-item"><a href="../templates/month_reccomendation.html">המלצות</a></li>
-            <li class="list-item"><a href="../templates/businesses.html">בתי עסק בב"ש</a></li>
-            <li class="list-item"><a href="../templates/homeHTML.html">דף הבית</a></li>
-        </ul>
-    </nav>
+{% block content %}
+<div id="homePageBody">
     <span>
         <h1 id="header3">בתי עסק בב"ש</h1>
     </span>
 
     <div id="container">
 
-        <a href="../templates/profileHTML.html">
-            <img class="businessses_img1 img-size" src="../static/frida.png" alt=""
-                onmouseover="setImgBorderOnHover(this)" onmouseout="setImgBorderOffHover(this)">
+        <a href="/profile">
+            <img class="businessses_img1 img-size" src="../static/media/frida.png" alt=""
+                 onmouseover="setImgBorderOnHover(this)" onmouseout="setImgBorderOffHover(this)">
         </a>
         <a href="#">
-            <img class="businessses_img2 img-size" src="../static/milba.png" alt=""
-                onmouseover="setImgBorderOnHover(this)" onmouseout="setImgBorderOffHover(this)">
+            <img class="businessses_img2 img-size" src="../static/media/milba.png" alt=""
+                 onmouseover="setImgBorderOnHover(this)" onmouseout="setImgBorderOffHover(this)">
         </a>
         <a href="#">
-            <img class="businessses_img3 img-size" src="../static/bbb.png" alt=""
-                onmouseover="setImgBorderOnHover(this)" onmouseout="setImgBorderOffHover(this)">
+            <img class="businessses_img3 img-size" src="../static/media/bbb.png" alt=""
+                 onmouseover="setImgBorderOnHover(this)" onmouseout="setImgBorderOffHover(this)">
         </a>
         <a href="#">
-            <img class="businessses_img4 img-size" src="../static/bengi.jpg" alt=""
-                onmouseover="setImgBorderOnHover(this)" onmouseout="setImgBorderOffHover(this)">
+            <img class="businessses_img4 img-size" src="../static/media/bengi.jpg" alt=""
+                 onmouseover="setImgBorderOnHover(this)" onmouseout="setImgBorderOffHover(this)">
         </a>
         <a href="#">
-            <img class="businessses_img5 img-size" src="../static/barshuk.jpg" alt=""
-                onmouseover="setImgBorderOnHover(this)" onmouseout="setImgBorderOffHover(this)">
+            <img class="businessses_img5 img-size" src="../static/media/barshuk.jpg" alt=""
+                 onmouseover="setImgBorderOnHover(this)" onmouseout="setImgBorderOffHover(this)">
         </a>
         <a href="#">
-            <img class="businessses_img6 img-size" src="../static/manga.jpg" alt=""
-                onmouseover="setImgBorderOnHover(this)" onmouseout="setImgBorderOffHover(this)">
+            <img class="businessses_img6 img-size" src="../static/media/manga.jpg" alt=""
+                 onmouseover="setImgBorderOnHover(this)" onmouseout="setImgBorderOffHover(this)">
         </a>
         <a href="#">
-            <img class="businessses_img7 img-size" src="../static/pola.jpg" alt=""
-                onmouseover="setImgBorderOnHover(this)" onmouseout="setImgBorderOffHover(this)">
+            <img class="businessses_img7 img-size" src="../static/media/pola.jpg" alt=""
+                 onmouseover="setImgBorderOnHover(this)" onmouseout="setImgBorderOffHover(this)">
         </a>
         <a href="#">
-            <img class="businessses_img8 img-size" src="../static/roasters.jpg" alt=""
-                onmouseover="setImgBorderOnHover(this)" onmouseout="setImgBorderOffHover(this)">
+            <img class="businessses_img8 img-size" src="../static/media/roasters.jpg" alt=""
+                 onmouseover="setImgBorderOnHover(this)" onmouseout="setImgBorderOffHover(this)">
         </a>
         <a href="#">
-            <img class="businessses_img9 img-size" src="../static/rozza.jpg" alt=""
-                onmouseover="setImgBorderOnHover(this)" onmouseout="setImgBorderOffHover(this)">
+            <img class="businessses_img9 img-size" src="../static/media/rozza.jpg" alt=""
+                 onmouseover="setImgBorderOnHover(this)" onmouseout="setImgBorderOffHover(this)">
         </a>
 
     </div>
     <div id="footerBusinesses">
-        <footer class="footer1">
-            <p>
-                עקבו אחרינו ברשתות החברתיות
-            </p>
-            <img class="icon2" src="../static/instagram.png">
-            <img class="icon2" src="../static/twitter.png">
-            <img class="icon2" src="../static/whatsapp (1).png">
-
-        </footer>
+        {{ super() }}
     </div>
-</body>
+</div>
+{% endblock %}
 
-</html>
+
+
+
+

@@ -5,6 +5,6 @@ import mysql.connector
 home = Blueprint('home', __name__, static_folder='static', static_url_path='/home', template_folder='templates')
 
 # Routes
-@home.route('/home')
+@home.route('/home', methods=['GET', 'POST'])
 def redirect_home():
     return render_template('homeHTML.html')

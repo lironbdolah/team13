@@ -5,6 +5,6 @@ import mysql.connector
 contact = Blueprint('contact', __name__, static_folder='static', static_url_path='/contact', template_folder='templates')
 
 # Routes
-@contact.route('/contact')
+@contact.route('/contact', methods=['GET', 'POST'])
 def redirect_contact():
     return render_template('contactHTML.html')

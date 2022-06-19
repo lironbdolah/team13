@@ -39,9 +39,9 @@ app.register_blueprint(preview)
 from pages.profile.profile import profile
 app.register_blueprint(profile)
 
-## project
-from pages.project.project import project
-app.register_blueprint(project)
+## recommend
+from pages.recommend.recommend import recommend
+app.register_blueprint(recommend)
 
 ## sign_up
 from pages.sign_up.sign_up import sign_up
