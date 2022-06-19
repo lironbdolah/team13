@@ -268,34 +268,31 @@
 .username{
 
     display: block;
-    margin-top: 8px; 
+    margin-top: 16px;
     font-family: FirstFont;
 
 }
 .mail{
     display: block;
-    font-size: 8px;
+    font-size: 16px;
     font-family: FirstFont;
 }
 .phone{
     display: block;
-    font-size: 8px;
+    font-size: 16px;
     font-family: FirstFont;
 }
 .password{
     display: block;
-    font-size: 8px;
+    font-size: 16px;
     font-family: FirstFont;
-    
 }
 
 /* input boxes for the connect page  */
 .input{
     border-radius: 5px;
     width: 250px;
-    
 }
-
 
 #send_button{
     margin: 0 auto; /* center button */
@@ -390,7 +387,6 @@
     margin-right: 66%;
 }
 
-/* username, mail, password and phone inputs */
 .big_input{
     border-radius: 5px;
     width: 350px;
@@ -693,7 +689,7 @@
   }
 
 
-/* ########### projectHTML page settings  ########### */
+/* ########### Recommend page settings  ########### */
 .divRecommend{
     margin: 0 auto;
 }

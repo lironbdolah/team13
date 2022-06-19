@@ -5,70 +5,74 @@
 {% endblock %}
 
 {% block content %}
-    <span>
-        <h1 id="BusinessName"> פרידה</h1>
+<span>
+        <h1 id="BusinessName"> {{business.title}}</h1>
     </span>
-    <div id="business-card">
-        <div id="title-1">
-            <h2 id="title-1-1">שעות happy hour:</h2>
-            <h2 id="title-1-2">מה שווה אצלנו?</h2>
-        </div>
-        <div id="details">
-            <p id="open-hours">12:00-19:00</p>
-            <ol id="drinks-sales">
-                <li><p id="drinks">4 צ'ייסרים ב 20 שח</p></li>
-                <li><p id="drinks">50% על האוכל</p></li>
-                <li><p id="drinks">1 פלוס 1 על היין</p></li>
-            </ol>
-        </div>
-        <div id="title-3">
-            <h2 id="title-3-1">חברים מספרים:</h2>
-        </div>
-        <div id="stars">
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-        </div>
-        <div id="reviews">
-                    <ol id="bussiness-reviews">
-                        <li><p>נהניתי מכל רגע. אוכל זול וקוקטלים פצצה!</p></li>
-                        <li><p>הערב הכי מהנה שהיה לי הרבה זמן. התפנקנו ולא כאב בכיס</p></li>
-                        <li><p>מנות גדולות ומעניינות</p></li>
-                    </ol>
-        </div>
+<div id="business-card">
+    <div id="title-1">
+        <h2 id="title-1-1">שעות happy hour:</h2>
+        <h2 id="title-1-2">מה שווה אצלנו?</h2>
+    </div>
+    <div id="details">
+        <p id="open-hours">{{business.start_hour}}-{{business.end_hour}}</p>
+        <ol id="drinks-sales">
+            {% for deal in business.deals %}
+            <li><p>{{deal}}</p></li>
+            {% endfor %}
+        </ol>
+    </div>
+    <div id="title-3">
+        <h2 id="title-3-1">חברים מספרים:</h2>
+    </div>
+    <div id="stars">
 
-        <div id="title-4">
-            <h2 id="title-4-1">רוצה לפרגן/ לעדכן:</h2>
+<!--        {% for i in range(4) %}-->
+<!--        <h1>omer</h1>-->
+<!--            {% if i <  {{business_row.stars}}: %}-->
+<!--                <span class="fa fa-star checked"></span>-->
+<!--            {% else %}-->
+<!--                <span class="fa fa-star"></span>-->
+<!--            {% endif %}-->
+<!--        {% endfor %}-->
+    </div>
+    <div id="reviews">
+        <ol id="bussiness-reviews">
+            <li><p>נהניתי מכל רגע. אוכל זול וקוקטלים פצצה!</p></li>
+            <li><p>הערב הכי מהנה שהיה לי הרבה זמן. התפנקנו ולא כאב בכיס</p></li>
+            <li><p>מנות גדולות ומעניינות</p></li>
+        </ol>
+    </div>
+
+    <div id="title-4">
+        <h2 id="title-4-1">רוצה לפרגן/ לעדכן:</h2>
+    </div>
+    <div id="title-5">
+        <h2 id="title-5-1">דרג:</h2>
+    </div>
+    <form id="form-r" onsubmit="event.preventDefault(); submitReview(this);">
+        <div id="freeTxt">
+            <input id="write" type="text" name="write">
         </div>
-        <div id="title-5">
-            <h2 id="title-5-1">דרג:</h2>
+        <div id="stars-2">
+            <span id="star1" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
+            <span id="star2" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
+            <span id="star3" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
+            <span id="star4" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
+            <span id="star5" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
         </div>
-        <form id="form-r" onsubmit="event.preventDefault(); submitReview(this);">
-                <div id="freeTxt">
-                    <input id="write" type="text" name="write">
-                </div>
-                <div id="stars-2">
-                    <span id= "star1" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
-                    <span id= "star2" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
-                    <span id= "star3" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
-                    <span id= "star4" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
-                    <span id= "star5" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
-                </div>
-                <div id="submit-r">
-                    <input type="submit"/>
-                </div>
-        </form>
-        <div id="order">
-            <a 
+        <div id="submit-r">
+            <input type="submit"/>
+        </div>
+    </form>
+    <div id="order">
+        <a
                 href="https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=610fe6d385269f6b88f6259b&source=facebook">הזמנת
-                מקום
-            </a>
-        </div>
+            מקום
+        </a>
+    </div>
 
-    </div>
-    <div id="footerProfile">
-        {{ super() }}
-    </div>
+</div>
+<div id="footerProfile">
+    {{ super() }}
+</div>
 {% endblock %}

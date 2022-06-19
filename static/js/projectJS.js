@@ -16,7 +16,7 @@ function comboFunction(object) {
         comboElement.innerHTML = '<form id="combo_box" action="/recommend" method="post" onsubmit="event.preventDefault(); return sendMyLocation(this);"> <p>הגדר טווח חיפוש רצוי:  </p> <input type="range" name=userRange min="1" max="20" class="slider" id="myRange" value="1" oninput="this.nextElementSibling.value = this.value"> Km <output> 1</output><p><button id="submit" type="submit">יאללה תמצאו לי</button></p></form>'
     }
     else {
-        comboElement.innerHTML = '<form id="combo_box" action="/profile" method="post"><button id="search" type="submit"></a>חפש</button> <input type="text" class="InputBox" placeholder="הכנס מקום בילוי רצוי..." id="searchInput" name="searchInput" autocomplete="on" required/></form>  <br>'
+        comboElement.innerHTML = '<form id="combo_box" action="/profile/searchInput" method="get"><button id="search" type="submit"></a>חפש</button> <input type="text" class="InputBox" placeholder="הכנס מקום בילוי רצוי..." id="searchInput" name="searchInput" autocomplete="on" required/></form>  <br>'
     }
 }
 
