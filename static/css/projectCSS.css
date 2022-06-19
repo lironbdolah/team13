@@ -176,7 +176,7 @@
   }
   
   #homePageBody {
-      background-image: url("../static/backround_image.png");
+      background-image: url("/static/media/backround_image.png");
       background-repeat: no-repeat;
       text-align: center;
       background-attachment: fixed;
@@ -190,17 +190,17 @@
   
   @font-face {
       font-family: FirstFont;
-      src: url(../static/ganclm_bold-webfont.ttf);
+      src: url("/static/media/ganclm_bold-webfont.ttf");
   }
 
   @font-face {
       font-family: HeaderFont;
-      src: url(../static/Panipuri.ttf);
+      src: url("/static/media/Panipuri.ttf");
   }
 
   @font-face {
     font-family: PageFont;
-    src: url(../static/MPLUS1p-Medium.ttf);
+    src: url("/static/media/MPLUS1p-Medium.ttf");
   }
 
   
@@ -228,8 +228,8 @@
 .sign_up_button{
     display: block;
     margin: 0 auto;
-    height: 10;
-    width: 30;
+    height: 10px;
+    width: 30px;
     font-size: 28px;
     padding-left: 75px; 
     padding-right: 75px; /* button size */
@@ -274,17 +274,17 @@
 }
 .mail{
     display: block;
-    font-size: 8;
+    font-size: 8px;
     font-family: FirstFont;
 }
 .phone{
     display: block;
-    font-size: 8;
+    font-size: 8px;
     font-family: FirstFont;
 }
 .password{
     display: block;
-    font-size: 8;
+    font-size: 8px;
     font-family: FirstFont;
     
 }

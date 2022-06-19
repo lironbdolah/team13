@@ -1,36 +1,10 @@
-<!DOCTYPE html>
-<html dir="rtl">
+{% extends 'base.html' %}
+{% set title='Profile' %}
+{% block title %}
+{{ title }}
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>profileBusinessPage</title>
-    <link rel="stylesheet" href="../static/projectCSS.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script defer src="../static/projectJS.js"></script>
-</head>
-
-<body id="profileBusinessPage">
-    <span class="headerLeft">
-        <header class="header">
-            <a href="../templates/preview.html">
-                <img class="icon" src="../static/log_in.png">
-            </a>
-        </header>
-
-    </span>
-    <span>
-        <img class="logo_image" src="../static/logo_small (1).png">
-    </span>
-    <nav class="nav">
-        <ul class="nav-list">
-            <li class="list-item"><a href="../templates/contactHTML.html">צור קשר</a></li>
-            <li class="list-item"><a href="../templates/month_reccomendation.html">המלצות</a></li>
-            <li class="list-item"><a href="../templates/businesses.html">בתי עסק בב"ש</a></li>
-            <li class="list-item"><a href="../templates/homeHTML.html">דף הבית</a></li>
-        </ul>
-    </nav>
+{% block content %}
     <span>
         <h1 id="BusinessName"> פרידה</h1>
     </span>
@@ -99,13 +73,11 @@
         <p>
             עקבו אחרינו ברשתות החברתיות
         </p>
-        <img class="icon2" src="../static/instagram.png">
-        <img class="icon2" src="../static/twitter.png">
-        <img class="icon2" src="../static/whatsapp (1).png">
+        <img class="icon2" src="../static/media/instagram.png">
+        <img class="icon2" src="../static/media/twitter.png">
+        <img class="icon2" src="../static/media/whatsapp (1).png">
 
     </footer>     
     </div>
 
-</body>
-
-</html>
+{% endblock %}
