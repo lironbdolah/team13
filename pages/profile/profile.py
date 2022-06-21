@@ -31,4 +31,4 @@ def redirect_profile_searchInput():
         'deals': business_deals,
         'stars': business_row.stars,
         'url': business_row.url
-    })
+        })

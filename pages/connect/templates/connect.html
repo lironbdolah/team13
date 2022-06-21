@@ -12,8 +12,8 @@
 
     <form id="connect_border" action="/connect" method="post" name="connect_form"
           onsubmit="return connect_validation(document.connect_form.pass,document.connect_form.name);">
-        <label class="username">שם משתמש:</label>
-        <input type="text" class="input" id="name" name="name" minlength="2" autocomplete="on" required>
+        <label class="username">אימייל:</label>
+        <input type="email" class="input" id="email" name="email" autocomplete="on" required>
 
         <label class="password">סיסמה:</label>
         <input type="text" class="input" id="pass" name="pass" minlength="2" autocomplete="on" required>
@@ -21,6 +21,9 @@
         <button type="submit" id="send_button" name="send_button">שלח</button>
         <a href="" class="forgot_password">שכחתי סיסמה </a>
     </form>
+    {% if message_for_user %}
+        <h4>{{message_for_user }}</h4>
+    {% endif %}
     <div id="footerProfile">
         {{super()}}
     </div>

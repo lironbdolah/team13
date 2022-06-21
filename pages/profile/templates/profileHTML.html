@@ -25,15 +25,14 @@
         <h2 id="title-3-1">חברים מספרים:</h2>
     </div>
     <div id="stars">
-
-<!--        {% for i in range(4) %}-->
-<!--        <h1>omer</h1>-->
-<!--            {% if i <  {{business_row.stars}}: %}-->
-<!--                <span class="fa fa-star checked"></span>-->
-<!--            {% else %}-->
-<!--                <span class="fa fa-star"></span>-->
-<!--            {% endif %}-->
-<!--        {% endfor %}-->
+        {% for i in range(0,5) %}
+        ##{{business.stars}}##
+            {% if i <  4 %}
+                <span class="fa fa-star checked"></span>
+            {% else %}
+                <span class="fa fa-star"></span>
+            {% endif %}
+        {% endfor %}
     </div>
     <div id="reviews">
         <ol id="bussiness-reviews">
@@ -66,7 +65,7 @@
     </form>
     <div id="order">
         <a
-                href="https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=610fe6d385269f6b88f6259b&source=facebook">הזמנת
+                href="{{business.url}}">הזמנת
             מקום
         </a>
     </div>
