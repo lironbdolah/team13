@@ -1172,3 +1172,20 @@
     margin: 10px 50px 10px 0px;
   }      
 }
+
+#combo1{
+  width: 250px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: bolder;
+  background-color: var(--orange2);
+  border-radius: 5px;
+}
+#combo2{
+  width: 250px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: bolder;
+  background-color: var(--orange2);
+  border-radius: 5px;
+}

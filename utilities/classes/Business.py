@@ -1,8 +1,8 @@
-from utilities.DB.db_manager import interact_db
+from utilities.DB.db_manager import DBManager
 
 
 class Business:
-    def __init__(self, url, name, password, start_hour, end_hour, deals, stars, city):
+    def __init__(self, name='-1', url='-1', password='-1', start_hour='-1', end_hour='-1', deals='-1', stars='-1', city='-1', latitude='-1', longitude='-1'):
         self.url = url
         self.name = name
         self.password = password
@@ -11,10 +11,15 @@ class Business:
         self.deals = deals
         self.stars = int(stars)
         self.city = city
+        self.latitude = latitude
+        self.longitude = longitude
+        self.db = DBManager()
 
     def get_business(self):
-        query = "INSERT INTO users(mail, user_name, password, phone_number, age, gender) VALUES ('%s', '%s', '%s', '%s', '%s', '%s')" % (self.email, self.user_name, self.password, self.phone_number, self.age, self.gender)
-        # self.commit(query)
-        interact_db(query, 'commit')
+        query = "SELECT * FROM businesses WHERE name='%s';" % self.name
+        return self.db.fetch(query)
+
+
+
 
 

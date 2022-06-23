@@ -15,7 +15,6 @@ def redirect_sign_up():
         user_phone = request.form['phone1']
         user_age = request.form['age_label1']
         user_gender = request.form['gender_label1']
-        print(user_name, user_email, user_password, user_phone, user_age, user_gender)
         user = User(user_email, user_name, user_password, user_phone, user_age, user_gender)
         user.add_user()
     return render_template('sign_up.html')
