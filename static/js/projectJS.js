@@ -102,6 +102,15 @@ const submitReview = () => {
         textValue: textValue,
         numOfStars: numOfStars
     }
+
+    fetch('http://127.0.0.1:5000/profile/rank',
+        {
+            method: "POST",
+            headers: {"Content-Type": "application/json;charset=utf-8"},
+            body: JSON.stringify(submitObject)
+        })
+        .then(res => console.log(res))
+        .catch(e => console.log(e))
 }
 
 const getNumOfStars = (divId) => {

@@ -36,9 +36,9 @@
     </div>
     <div id="reviews">
         <ol id="bussiness-reviews">
-            <li><p>נהניתי מכל רגע. אוכל זול וקוקטלים פצצה!</p></li>
-            <li><p>הערב הכי מהנה שהיה לי הרבה זמן. התפנקנו ולא כאב בכיס</p></li>
-            <li><p>מנות גדולות ומעניינות</p></li>
+             {% for review in business.reviews %}
+            <li><p>{{review.free_text}}</p></li>
+            {% endfor %}
         </ol>
     </div>
 
