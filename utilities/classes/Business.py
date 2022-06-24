@@ -21,6 +21,14 @@ class Business:
         query = "SELECT * FROM businesses WHERE name='%s';" % self.name
         return self.db.fetch(query)
 
+    def get_future_business(self):
+        query = "SELECT * FROM businesses WHERE city='%s';" % self.city
+        return self.db.fetch(query)
+
+    def get_all_businesses(self):
+        query = "SELECT * FROM businesses"
+        return self.db.fetch(query)
+
 
 
 

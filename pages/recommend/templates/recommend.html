@@ -15,9 +15,9 @@
     </h1>
     <div class="recommend-border" >
        <ol>
-           <li><a href="#">מילבה</a></li><br>
-           <li><a href="/profile">פרידה</a></li><br>
-           <li><a href="#">רוזה</a></li>
+           {% for url, title in sites: %}
+           <li><a href="/profile/searchInput?searchInput={{title}}">{{url}}<title>{{title}}</title></a></li><br>
+           {% endfor %}
        </ol>
     </div>
 </div>

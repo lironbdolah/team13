@@ -1,6 +1,9 @@
 from flask import Blueprint, render_template, request, jsonify, session
 from utilities.DB.db_manager import DBManager
 import mysql.connector
+from datetime import datetime, time
+from math import sin, cos, sqrt, atan2, radians
+import json
 
 from utilities.classes.Business import Business
 from utilities.classes.Review import Review
@@ -8,6 +11,28 @@ from utilities.classes.Review import Review
 # profile blueprint definition
 profile = Blueprint('profile', __name__, static_folder='static', url_prefix='/profile',
                     template_folder='templates')
+
+# if check time is between begin time and end time -> returns TRUE
+def is_time_between(begin_time, end_time, check_time):
+    # If check time is not given, default to current UTC time
+    check_time = check_time or datetime.utcnow().time()
+    if begin_time < end_time:
+        return check_time >= begin_time and check_time < end_time
+    else:  # crosses midnight
+        return check_time >= begin_time or check_time <= end_time
+
+def messure_distance(lat1,long1,lat2,long2):
+    # approximate radius of earth in km
+    R = 6373.0
+
+    dlong = radians(long2) - radians(long1)
+    dlat = radians(lat2) - radians(lat1)
+
+    a = sin(dlat / 2) * 2 + cos(lat1) * cos(lat2) * sin(dlong / 2) * 2
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+
+    distance = R * c
+    return distance
 
 
 # Routes
@@ -46,14 +71,73 @@ def redirect_profile_searchInput():
 
 @profile.route('/futureSearch')
 def redirect_profile_future_search():
-    print(request.args)
-    return render_template('homeHtml.html')
+    city = request.args['combo1']
+    hours = request.args['combo2'].split('-')
+    times = [i.split(':') for i in hours]
+
+    # # get all businesses in beer sheva
+    b = Business()
+    b.city = city
+    businesses = b.get_future_business()
+    good_businesses = []
+    # get all businesses who match the time condition and insert them to the list  good_businesses
+    for i in businesses:
+        business_start_hour = str(i.start_hour).split(':')
+        business_end_hour = str(i.end_hour).split(':')
+        if is_time_between(time(int(times[0][0]),int(times[0][1])), time(int(times[1][0]), int(times[1][1])),
+                           check_time=time(int(business_start_hour[0]),int(business_start_hour[1]))) \
+            or is_time_between(time(int(times[0][0]),int(times[0][1])), time(int(times[1][0]), int(times[1][1])),
+                               check_time=time(int(business_end_hour[0]),int(business_end_hour[1]))):
+
+            good_businesses.append(i)
+
+    urls = [i.url for i in good_businesses]
+    titles = [i.name for i in good_businesses]
+    if len(urls) > 0:
+        return render_template('recommend.html', sites=zip(titles, urls))
+    else:
+        urls.append('home.html')
+        titles.append("לא נמצאו בתי עסק ברדיוס שביקשת")
+        return render_template('recommend.html', sites=zip(titles, urls))
 
 
-@profile.route('/by-location', methods=["POST"])
+@profile.route('/by-location', methods=['GET', 'POST'])
 def redirect_profile_by_location():
-    print(request.get_data())
-    return jsonify({"test": 1})
+    data = request.get_data().decode('UTF-8')
+    json_acceptable_string = data.replace("'", "\"")
+    dict = json.loads(json_acceptable_string)
+
+    # get businesses from db:
+    b = Business()
+    businesses = b.get_all_businesses()
+
+    # user entered variables
+    lat_1 = float(dict['latitude'])
+    long_1 = float(dict['longitude'])
+    range = int(dict['userRange'])
+    print("my location:")
+    print(lat_1,long_1)
+
+    good_businesses = []
+    # get all businesses that are in range:
+    for i in businesses:
+        lat_2 = i.latitude
+        long_2 = i.longitude
+        print(lat_2,long_2)
+        distance = messure_distance(lat_1,long_1,lat_2,long_2)
+        print(distance,range)
+        if distance < range:
+            good_businesses.append(i)
+
+    urls = [i.url for i in good_businesses]
+    titles = [i.name for i in good_businesses]
+    print(urls)
+    if len(urls)>0:
+        return render_template('recommend.html', sites=zip(titles, urls))
+    else:
+        urls.append('home.html')
+        titles.append("לא נמצאו בתי עסק ברדיוס שביקשת")
+        return render_template('recommend.html', sites=zip(titles, urls))
 
 
 @profile.route('/rank', methods=["POST"])
