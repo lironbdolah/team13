@@ -476,10 +476,10 @@
     gap: 2rem;
 }
 
-.businessses_img1, .businessses_img4, .businessses_img7 {
+.businesses_img1, .businesses_img4, .businesses_img7 {
     justify-self: end;
 }
-.businessses_img3, .businessses_img6, .businessses_img9 {
+.businesses_img3, .businesses_img6, .businesses_img9 {
     justify-self: start;
 }
 

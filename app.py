@@ -10,6 +10,9 @@ app.secret_key = '123'
 app.config['SESSION_PERMANENT'] = True
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=20)
 
+@app.route('/')
+def main_page():
+    return redirect('/preview')
 ###### Pages
 ## home
 from pages.home.home import home
