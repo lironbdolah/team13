@@ -19,6 +19,9 @@
             <div class="combp-slidecontainer">
             </div>
         </div>
+        {% if MSG %}
+            <h4 id="msg_for_user">{{MSG}}</h4>
+        {% endif %}
     </div>
     <div class="footer1-home">
         {{ super() }}

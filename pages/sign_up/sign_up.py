@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, session
+from flask import Blueprint, render_template, request, session, redirect
 from utilities.classes.User import User
 import mysql.connector
 
@@ -27,6 +27,7 @@ def redirect_sign_up():
             user = User(user_email, user_name, user_password, user_phone, user_age, user_gender)
             user.add_user()
             session['logedin'] = True
-            return render_template('homeHTML.html', message_for_user=message_connect)
+            session['user_email'] = user_email
+            return redirect('/home')
 
     return render_template('sign_up.html')

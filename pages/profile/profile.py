@@ -41,29 +41,31 @@ def redirect_profile():
 @profile.route('/searchInput')
 def redirect_profile_searchInput():
     business_name = request.args['searchInput']
-
     b = Business(name=business_name)
     business = b.get_business()
-    business_row = business[0]
+    if business != []:
+        business_row = business[0]
+        print(business_row)
+        business_deals = business_row.deals.split('$')
 
-    business_deals = business_row.deals.split('$')
+        r = Review(business=business_row.id)
+        review = r.get_review()
+        #  = review.get_review(id=business_row.id)
+        # print(review_list)
+        session['b_id'] = business_row.id
 
-    r = Review(business=business_row.id)
-    review = r.get_review()
-    #  = review.get_review(id=business_row.id)
-    # print(review_list)
-    session['b_id'] = business_row.id
+        return render_template('profileHTML.html', business={
+            'id': business_row.id,
+            'title': business_row.name,
+            'start_hour': business_row.start_hour,
+            'end_hour': business_row.end_hour,
+            'deals': business_deals,
+            'stars': business_row.stars,
+            'url': business_row.url,
+            'reviews': review
+        })
 
-    return render_template('profileHTML.html', business={
-        'id': business_row.id,
-        'title': business_row.name,
-        'start_hour': business_row.start_hour,
-        'end_hour': business_row.end_hour,
-        'deals': business_deals,
-        'stars': business_row.stars,
-        'url': business_row.url,
-        'reviews': review
-    })
+    return render_template('homeHTML.html', MSG='בית עסק מבוקש לא קיים במערכת')
 
 
 @profile.route('/futureSearch')
@@ -141,7 +143,7 @@ def rank_business():
     text = request.get_json()["textValue"]
     business_id = session["b_id"]
 
-    review = Review(review_time=datetime.now(), stars=num_of_stars, free_text=text, business=business_id, mail="ADIRIS@GMAIL.COM")
+    review = Review(review_time=datetime.now(), stars=num_of_stars, free_text=text, business=business_id, mail=session['user_email'])
     review.insert_review()
     business_new_stars_avg = review.get_avg_stars()
 

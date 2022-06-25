@@ -2,18 +2,18 @@
         <header class="header">
         {% if not session.logedin %}
              <a href="/preview">
-                 <img class="icon" src="static/media/log_in.png">
+                 <img class="icon" src="../static/media/log_in.png">
              </a>
         {% else %}
             <a href="/logout">
-                <img class="icon" src="static/media/log_out_logo.jpeg">
+                <img class="icon" src="../static/media/log_out_logo.jpeg">
             </a>
         {% endif %}
 
         </header>
 </span>
 <span>
-    <img class="logo_image" src="static/media/logo_small (1).png">
+    <img class="logo_image" src="../static/media/logo_small (1).png">
 </span>
 {% if not session.logedin %}
     <nav class="nav">

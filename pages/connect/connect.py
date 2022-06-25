@@ -23,7 +23,8 @@ def redirect_connect():
 
         if(message_connect == 'משתמש נכנס בהצלחה'):
             session['logedin'] = True
-            return render_template('homeHTML.html', message_for_user=message_connect)
+            session['user_email'] = user_email
+            return redirect('/home')
 
         elif(message_connect == 'הסיסמה לא תואמת לאימייל, אנא נסה בשנית!'):
             return render_template('connect.html', message_for_user=message_connect)

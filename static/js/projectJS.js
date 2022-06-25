@@ -1,14 +1,19 @@
 const activePge = window.location.href;
 
-const navList = document.querySelectorAll('nav a').
-forEach(link => {
-    if(link.href == activePge){
-        link.classList.add('active');
-    }
-});
+const markCurrentPage = () => {
+    document.querySelectorAll("nav a").forEach((currElement) => {
+        if (currElement.href.includes(`${window.location.pathname}`)) {
+            currElement.classList.add("active");
+        }
+    });
+};
 
 
 function comboFunction(object) {
+    const elemet = document.getElementById("msg_for_user");
+    if(elemet) {
+        elemet.innerHTML = "";
+    }
     const comboElement = document.getElementById('combo-div');
     const selcetOption = object.value;
     console.log(selcetOption)
@@ -22,6 +27,10 @@ function comboFunction(object) {
     else {
         comboElement.innerHTML = '<form id="combo_box" action="/profile/searchInput" method="get"><button id="search" type="submit"></a>חפש</button> <input type="text" class="InputBox" placeholder="הכנס מקום בילוי רצוי..." id="searchInput" name="searchInput" autocomplete="on" required/></form>  <br>'
     }
+}
+
+const submitHome = (searchInput) => {
+    console.log(searchInput)
 }
 
 const sendMyLocation = (locationForm) => {
