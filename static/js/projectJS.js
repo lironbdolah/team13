@@ -46,7 +46,12 @@ const sendMyLocation = (locationForm) => {
                 headers: {"Content-Type": "application/json;charset=utf-8"},
                 body: JSON.stringify(positionObject)
             })
-            .then(response =>  console.log(response.data))
+            .then(response => response.text())
+            .then(htmlFile => {
+                // var parser = new DOMParser();
+                // var doc = parser.parseFromString(htmlFile, "text/html");
+                document.body.innerHTML = htmlFile;
+            })
             .catch(err => console.log(err)
     )
     }
