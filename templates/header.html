@@ -1,18 +1,33 @@
 <span class="headerLeft">
         <header class="header">
-            <a href="/preview">
-                <img class="icon" src="static/media/log_in.png">
+        {% if not session.logedin %}
+             <a href="/preview">
+                 <img class="icon" src="static/media/log_in.png">
+             </a>
+        {% else %}
+            <a href="/logout">
+                <img class="icon" src="static/media/log_out_logo.jpeg">
             </a>
+        {% endif %}
+
         </header>
-    </span>
+</span>
 <span>
-        <img class="logo_image" src="static/media/logo_small (1).png">
-    </span>
-<nav class="nav">
-    <ul class="nav-list">
-        <li class="list-item"><a href="/contact">צור קשר</a></li>
-        <li class="list-item"><a href="/month_reccomendation">המלצות</a></li>
-        <li class="list-item"><a href="/businesses">בתי עסק בב"ש</a></li>
-        <li class="list-item"><a href="/home">דף הבית</a></li>
-    </ul>
-</nav>
+    <img class="logo_image" src="static/media/logo_small (1).png">
+</span>
+{% if not session.logedin %}
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="list-item"><a href="/contact">צור קשר</a></li>
+        </ul>
+    </nav>
+{% else %}
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="list-item"><a href="/contact">צור קשר</a></li>
+            <li class="list-item"><a href="/month_reccomendation">המלצות</a></li>
+            <li class="list-item"><a href="/businesses">בתי עסק בב"ש</a></li>
+            <li class="list-item"><a href="/home">דף הבית</a></li>
+        </ul>
+    </nav>
+{% endif %}

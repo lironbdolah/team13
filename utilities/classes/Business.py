@@ -37,5 +37,9 @@ class Business:
         query = "UPDATE businesses SET stars='%s' WHERE id='%s'" % (stars, self.id)
         return self.db.commit(query)
 
+    def month_businesses(self):
+        query = "SELECT * FROM businesses order by stars desc limit 3"
+        return self.db.fetch(query)
+
 
 

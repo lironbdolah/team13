@@ -3,7 +3,7 @@ from utilities.DB.db_manager import DBManager
 
 
 class User:
-    def __init__(self, email, password, user_name='-1', phone_number='-1', age='-1', gender='-1'):
+    def __init__(self, email, user_name='-1', password='-1', phone_number='-1', age='-1', gender='-1'):
         self.email = email
         self.user_name = user_name
         self.password = password
@@ -40,5 +40,13 @@ class User:
                     return 'הסיסמה לא תואמת לאימייל, אנא נסה בשנית!'
         return 'אימייל זה לא קיים במערכת'
 
-
+    def connect_first_time(self):
+        query = 'select * from users'
+        users_l = self.db.fetch(query)
+        for user in users_l:
+            if user.mail == self.email:
+                    return 'אימייל זה כבר קיים במערכת. אנא בחר אימייל אחר'
+            else:
+                    return ''
+        return ''
 

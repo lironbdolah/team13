@@ -332,9 +332,10 @@
 #sign_up_send_button{
     
     margin: 0 auto; /* center button */
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 10px;
-    display: block;
+    margin-right: 30px;
+    display: inline;
     font-size: 15px;
     height: 25px;
     width: 100px;
@@ -350,7 +351,7 @@
     border-radius: 5px;
     border-color: var(--orange6);
     border-style: solid;
-    height: 300px;
+    height: 350px;
     width: 425px;
     margin: 0 auto; 
     text-align: right;

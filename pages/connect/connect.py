@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect
+from flask import Blueprint, render_template, request, redirect, session
 import mysql.connector
 
 # connect blueprint definition
@@ -17,10 +17,12 @@ def redirect_connect():
     if request.method == "POST":
         user_password = request.form['pass']
         user_email = request.form['email']
-        user = User(user_email, user_password)
+        user = User(email=user_email, password=user_password)
         message_connect = user.connect()
 
+
         if(message_connect == 'משתמש נכנס בהצלחה'):
+            session['logedin'] = True
             return render_template('homeHTML.html', message_for_user=message_connect)
 
         elif(message_connect == 'הסיסמה לא תואמת לאימייל, אנא נסה בשנית!'):
@@ -32,5 +34,9 @@ def redirect_connect():
     return render_template('connect.html', message_for_user=message_for_user)
 
 
-
+@connect.route('/logout', methods=['GET', 'POST'])
+def logout_func():
+    session['logedin'] = False
+    session.clear()
+    return redirect('/preview')
 
