@@ -21,6 +21,10 @@ class Business:
         query = "SELECT * FROM businesses WHERE name='%s';" % self.name
         return self.db.fetch(query)
 
+    def get_business_by_id(self):
+        query = "SELECT * FROM businesses WHERE id='%s';" % self.id
+        return self.db.fetch(query)
+
     def get_future_business(self):
         query = "SELECT * FROM businesses WHERE city='%s';" % self.city
         return self.db.fetch(query)
@@ -29,7 +33,9 @@ class Business:
         query = "SELECT * FROM businesses"
         return self.db.fetch(query)
 
-
+    def update_business_stars(self, stars):
+        query = "UPDATE businesses SET stars='%s' WHERE id='%s'" % (stars, self.id)
+        return self.db.commit(query)
 
 
 

@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<span>
+    <span>
         <h1 id="BusinessName"> {{business.title}}</h1>
     </span>
 <div id="business-card">
@@ -47,10 +47,11 @@
     </div>
     <div id="title-5">
         <h2 id="title-5-1">דרג:</h2>
+        <h6 id="title-5-1">במידה ולא תסמן כוכבים, המס' שישלח הוא 0</h6>
     </div>
     <form id="form-r" onsubmit="event.preventDefault(); submitReview(this);">
         <div id="freeTxt">
-            <input id="write" type="text" name="write">
+            <input id="write" type="text" name="write" required>
         </div>
         <div id="stars-2">
             <span id="star1" class="fa fa-star" onclick="blinkingStars(this.id);"></span>
@@ -65,8 +66,7 @@
     </form>
     <div id="order">
         <a
-                href="{{business.url}}">הזמנת
-            מקום
+            href="{{business.url}}">הזמנת מקום
         </a>
     </div>
 

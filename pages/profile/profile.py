@@ -137,7 +137,27 @@ def redirect_profile_by_location():
 
 @profile.route('/rank', methods=["POST"])
 def rank_business():
-    print(request.get_data())
-    # TODO missing profile update before render template
-    # TODO missing code protection on missing business inside template
-    return render_template('profileHTML.html')
+    num_of_stars = request.get_json()["numOfStars"]
+    text = request.get_json()["textValue"]
+    business_id = session["b_id"]
+
+    review = Review(review_time=datetime.now(), stars=num_of_stars, free_text=text, business=business_id, mail="ADIRIS@GMAIL.COM")
+    review.insert_review()
+    business_new_stars_avg = review.get_avg_stars()
+
+    business_updated = Business(id=business_id)
+    business_row = business_updated.get_business_by_id()[0]
+    business_deals = business_row.deals.split('$')
+    business_updated.update_business_stars(business_new_stars_avg)
+
+
+    return render_template('profileHTML.html', business={
+        'id': business_id,
+        'title': business_row.name,
+        'start_hour': business_row.start_hour,
+        'end_hour': business_row.end_hour,
+        'deals': business_deals,
+        'stars': business_new_stars_avg,
+        'url': business_row.url,
+        'reviews': review.get_review()
+    })

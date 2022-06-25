@@ -62,15 +62,15 @@ const sendMyLocation = (locationForm) => {
 let deleteOnlyOne = true;
 
 const blinkingStars = (starElement) => {
-if(deleteOnlyOne===true){
- deleteAllStars();
- deleteOnlyOne=false;   
-}
-const element = document.getElementById(starElement)
-element.classList.add("checked");
-if(starElement=== "star1"){
-    deleteOnlyOne= true;
-    return;
+    if(deleteOnlyOne===true){
+     deleteAllStars();
+     deleteOnlyOne=false;
+    }
+    const element = document.getElementById(starElement)
+    element.classList.add("checked");
+    if(starElement=== "star1"){
+        deleteOnlyOne= true;
+        return;
 }
 if(starElement=== "star2") {
   blinkingStars("star1");  
@@ -114,8 +114,12 @@ const submitReview = () => {
             headers: {"Content-Type": "application/json;charset=utf-8"},
             body: JSON.stringify(submitObject)
         })
-        .then(res => console.log(res))
-        .catch(e => console.log(e))
+        .then(response => response.text())
+        .then(htmlFile => {
+            document.body.innerHTML = htmlFile;
+        })
+        .catch(err => console.log(err)
+    )
 }
 
 const getNumOfStars = (divId) => {
