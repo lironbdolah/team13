@@ -4,13 +4,17 @@
 {{ title }}
 {% endblock %}
 
+{% block page_css %}
+    <link rel="stylesheet" href="{{ url_for('contact.static', filename='css/contact.css') }}"/>
+{% endblock %}
+
 {% block content %}
 <div id="homePageBody">
     <div>
         <h1 id="header3"> צור קשר</h1>
     </div>
     <div id="mainDiv">
-        <span id="formInput">
+        <div id="formInput">
             <form id="form" action="/contact" method="post" name="contact_form"
                 onsubmit="return contact_validation(document.contact_form.email,document.contact_form.phoneNumber);">
                 <ul>
@@ -21,7 +25,6 @@
                     <br><br>
                     <input class="listInputBox" type="email" placeholder="אימייל *" id="email" name="email"
                         autocomplete="on" required /> <br> <br>
-<!--                    <button id="user_auto_complete" onclick="">השלם פרטים</button>-->
                     <div id="send">
                         <input type="checkbox" id="agreeDetails" name="agreeDetails" required>
                         <label for="agreeDetails">אני מאשר/ת בזאת קבלת חומר פרסומי שישלח אליי </label> <br><br>
@@ -29,7 +32,7 @@
                     </div>
                 </ul>
             </form>
-        </span>
+        </div>
         <p id="infoParagraph">
             פרטי התקשרות<br>
             פנה אלינו באמצעות טלפון או דוא"ל<br>
@@ -38,8 +41,18 @@
             +972-501233212
         </p>
     </div>
+
+    {% if message_contact %}
+        <h4>{{ message_contact }}</h4>
+    {% endif %}
+
     <div id="footerContact">
         {{ super() }}
     </div>
 </div>
 {% endblock %}
+
+{% block page_js %}
+    <script src="{{ url_for('contact.static', filename='js/contact.js') }}"></script>
+{% endblock %}
+

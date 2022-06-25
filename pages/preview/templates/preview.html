@@ -4,6 +4,10 @@
 {{ title }}
 {% endblock %}
 
+{% block page_css %}
+    <link rel="stylesheet" href="{{ url_for('preview.static', filename='css/preview.css') }}"/>
+{% endblock %}
+
 {% block content %}
 <div id="preBody">
     <span>
@@ -35,4 +39,8 @@
         {{ super() }}
     </div>
 </div>
+{% endblock %}
+
+{% block page_js %}
+    <script src="{{ url_for('preview.static', filename='js/preview.js') }}"></script>
 {% endblock %}

@@ -4,25 +4,37 @@
 {{ title }}
 {% endblock %}
 
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('recommend.static', filename='css/recommend.css') }}"/>
+{% endblock %}
+
 {% block content %}
 <div id="homePageBody">
  <span>
     <h1 id="header2"> Cheers</h1>
  </span>
- <div class="divRecommend">
-    <h1 id="recommend">
-        המלצות עבורך:<br>
-    </h1>
-    <div class="recommend-border" >
-       <ol>
-           {% for url, title in sites: %}
-           <li><a href="/profile/searchInput?searchInput={{title}}">{{title}}</a></li><br>
-           {% endfor %}
-       </ol>
+    <div class="divRecommend">
+        <h1 id="recommend">
+            המלצות עבורך:<br>
+        </h1>
+        <div class="recommend-border">
+            <ol>
+                {% for url, title in sites: %}
+                    {% if title == "לא נמצאו בתי עסק ברדיוס שביקשת": %}
+                        <li>{{title}}</li><br>
+                    {% else %}
+                        <li><a href="/profile/searchInput?searchInput={{title}}">{{title}}</a></li><br>
+                    {% endif %}
+                {% endfor %}
+            </ol>
+        </div>
     </div>
-</div>
     <div class="footer1-my-location">
         {{ super() }}
     </div>
 </div>
+{% endblock %}
+
+{% block page_js %}
+<script src="{{ url_for('recommend.static', filename='js/recommend.js') }}"></script>
 {% endblock %}

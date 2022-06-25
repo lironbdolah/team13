@@ -1,0 +1,76 @@
+/* sign up surrounding border */
+#sign_up_border {
+
+    background-color: var(--orange1);
+    border-radius: 5px;
+    border-color: var(--orange6);
+    border-style: solid;
+    height: 350px;
+    width: 425px;
+    margin: 0 auto;
+    text-align: right;
+    opacity: 65%;
+    margin-top: 80px; /* distance from top */
+    padding-right: 10px;
+
+}
+
+/* section class to fit age and gender on the same*/
+.lower_inputs {
+    margin: auto;
+    margin-top: 10px;
+}
+
+/* age input position */
+.age {
+    float: right;
+
+}
+
+.age_label {
+    margin-top: 8px;
+    font-family: FirstFont;
+}
+
+.gender_label {
+    margin-top: 8px;
+    font-family: FirstFont;
+}
+
+/* gender input position */
+.gender {
+    margin-right: 66%;
+}
+
+.big_input {
+    border-radius: 5px;
+    width: 350px;
+
+}
+
+/* age and sex inputs */
+.small_input {
+    border-radius: 5px;
+    width: 45px;
+}
+
+/* ########### signup page settings  ########### */
+
+#sign_up_send_button {
+
+    margin: 0 auto; /* center button */
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-right: 30px;
+    display: inline;
+    font-size: 15px;
+    height: 25px;
+    width: 100px;
+    background-color: var(--orange1);
+    font-family: FirstFont;
+    animation: changeColor 2s linear 0s infinite;
+}
+
+#footerSignUp {
+    padding-top: 100px;
+}

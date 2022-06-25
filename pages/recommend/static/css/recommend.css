@@ -1,0 +1,26 @@
+/* ########### Recommend page settings  ########### */
+.divRecommend {
+    margin: 0 auto;
+}
+
+#recommend {
+    margin-bottom: 30px;
+}
+
+.recommend-border {
+    text-align: right;
+    list-style-position: inside;
+    margin: 0 auto;
+    background-color: var(--orange10);
+    border-style: solid;
+
+    border-radius: 10px;
+    width: 20%;
+    height: 50%;
+    opacity: 80%;
+
+}
+
+.footer1-my-location {
+    padding-top: 400px;
+}

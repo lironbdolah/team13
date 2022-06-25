@@ -4,6 +4,10 @@
 {{ title }}
 {% endblock %}
 
+{% block page_css %}
+    <link rel="stylesheet" href="{{ url_for('sign_up.static', filename='css/sign_up.css') }}"/>
+{% endblock %}
+
 {% block content %}
 <div id="homePageBody">
     <span>
@@ -48,4 +52,8 @@
         {{ super() }}
     </div>
 </div>
+{% endblock %}
+
+{% block page_js %}
+    <script src="{{ url_for('sign_up.static', filename='js/sign_up.js') }}"></script>
 {% endblock %}

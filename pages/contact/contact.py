@@ -17,7 +17,7 @@ def redirect_contact():
         contact_phone_number = request.form['phoneNumber']
         contact = user_contact(contact_name, contact_email, contact_phone_number)
         contact.add_user_contact()
-        return render_template('/contactHTML.html')
+        return render_template('/contactHTML.html', message_contact= 'תודה על השארת הפרטים, ניצור קשר בהקדם האפשרי')
     else:
         return render_template('/contactHTML.html')
 #

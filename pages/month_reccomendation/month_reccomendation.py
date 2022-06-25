@@ -15,8 +15,7 @@ def redirect_month_reccomendation():
 
     return render_template('month_reccomendation.html', businesses={
         'first': businesses[0].name,
-        'first_url': businesses[0].url,
         'second': businesses[1].name,
-        'second_url': businesses[1].url,
-        'third': businesses[2].name,
-        'third_url': businesses[2].url})
+        'third': businesses[2].name
+    })
+

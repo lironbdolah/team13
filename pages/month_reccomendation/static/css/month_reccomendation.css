@@ -1,0 +1,65 @@
+/* ########### monthly reccomendations page settings  ########### */
+
+
+.bars_images {
+    margin-top: 100px;
+}
+
+
+.recommend1 {
+    border: var(--orange6);
+    border-radius: 20px;
+    border-style: solid;
+    height: 170px;
+    width: 170px;
+    transition-duration: 0.4s; /* hover color change speed */
+}
+
+.recommend1:hover {
+    opacity: 70%;
+}
+
+
+.link_size { /* to limit the link size*/
+    height: 170px;
+    width: 170px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    display: block;
+}
+
+
+.recommend2 {
+    display: inline-block;
+    margin-top: 8px;
+    border: var(--orange6);
+    border-radius: 20px;
+    border-style: solid;
+    height: 170px;
+    width: 170px;
+    margin-left: 200px;
+    transition-duration: 0.4s; /* hover color change speed */
+}
+
+.recommend2:hover {
+    opacity: 70%;
+}
+
+.recommend3 {
+    display: inline-block;
+    margin-top: 8px;
+    border: var(--orange6);
+    border-radius: 20px;
+    border-style: solid;
+    height: 170px;
+    width: 170px;
+    transition-duration: 0.4s; /* hover color change speed */
+}
+
+.recommend3:hover {
+    opacity: 70%;
+}
+
+#footerReccomend {
+    padding-top: 150px;
+}

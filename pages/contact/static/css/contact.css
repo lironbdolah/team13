@@ -1,0 +1,72 @@
+/* ########### contactHTML page settings  ########### */
+
+.listInputBox {
+    border-radius: 5px;
+}
+
+#formInput {
+    width: 400px;
+    display: inline;
+    float: right;
+
+}
+
+#infoParagraph {
+    background-color: #f1cca6;
+    border-style: solid;
+    float: right;
+    border-radius: 10px;
+    width: 300px;
+    height: 128px;
+    opacity: 80%;
+}
+
+#mainDiv {
+    display: flex;
+    padding-top: 90px;
+    /* position: absolute; */
+    justify-content: center;
+    /* padding-right: 400px; */
+}
+
+#send {
+    width: 700px;
+    padding-top: 60px;
+}
+
+#contact_submit_button {
+    background-color: var(--orange4);
+    animation: changeColor 2s linear 0s infinite;
+}
+
+
+#footerContact {
+    padding-top: 200px;
+}
+
+@media only screen and (max-width: 1000px) {
+    #mainDiv {
+        padding-top: 90px;
+        padding-right: 0%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    #mainDiv {
+        padding-top: 90px;
+        text-align: center;
+    }
+
+
+    #footerContact {
+        padding-top: 550px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    #infoParagraph {
+        height: 160px;
+    }
+}

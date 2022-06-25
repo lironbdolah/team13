@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
-{% set title='Reccomend' %}
+{% set title='Recommend' %}
 {% block title %}
 {{ title }}
+{% endblock %}
+
+{% block page_css %}
+    <link rel="stylesheet" href="{{ url_for('month_reccomendation.static', filename='css/month_reccomendation.css') }}"/>
 {% endblock %}
 
 {% block content %}
@@ -14,15 +18,15 @@
     <div class="bars_images">
 
         <div class="link_size">
-            <a href="{{businesses.first_url}}" id="link_size">
-                <img src="../static/media/{{businesses.first}}.png" class="frida">
+            <a href="/profile/searchInput?searchInput={{businesses.first}}" id="link_size">
+                <img src="../static/media/{{businesses.first}}.png" class="recommend1">
             </a>
         </div>
-        <a href="{businesses.second_url}}">
-            <img class="milba" src="../static/media/{{businesses.second}}.png">
+        <a href="/profile/searchInput?searchInput={{businesses.second}}">
+            <img class="recommend2" src="../static/media/{{businesses.second}}.png">
         </a>
-        <a href="{businesses.third_url}}">
-            <img class="bbb" src="../static/media/{{businesses.third}}.png">
+        <a href="/profile/searchInput?searchInput={{businesses.third}}">
+            <img class="recommend3" src="../static/media/{{businesses.third}}.png">
         </a>
 
     </div>
@@ -32,4 +36,8 @@
     </div>
 
 </div>
+{% endblock %}
+
+{% block page_js %}
+    <script src="{{ url_for('month_reccomendation.static', filename='js/month_reccomendation.js') }}"></script>
 {% endblock %}

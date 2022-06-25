@@ -4,6 +4,10 @@
 {{ title }}
 {% endblock %}
 
+{% block page_css %}
+    <link rel="stylesheet" href="{{ url_for('connect.static', filename='css/connect.css') }}"/>
+{% endblock %}
+
 {% block content %}
 <div id="homePageBody">
     <span>
@@ -19,7 +23,7 @@
         <input type="text" class="input" id="pass" name="pass" minlength="2" autocomplete="on" required>
 
         <button type="submit" id="send_button" name="send_button">שלח</button>
-        <a href="" class="forgot_password">שכחתי סיסמה </a>
+        <a href="/contact" class="forgot_password">שכחתי סיסמה </a>
     </form>
     {% if message_for_user %}
         <h4>{{message_for_user }}</h4>
@@ -30,7 +34,6 @@
 </div>
 {% endblock %}
 
-
-<script>
-
-</script>
+{% block page_js %}
+    <script src="{{ url_for('connect.static', filename='js/connect.js') }}"></script>
+{% endblock %}

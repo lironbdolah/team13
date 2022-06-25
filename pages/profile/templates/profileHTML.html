@@ -4,6 +4,10 @@
 {{ title }}
 {% endblock %}
 
+{% block page_css %}
+    <link rel="stylesheet" href="{{ url_for('profile.static', filename='css/profile.css') }}"/>
+{% endblock %}
+
 {% block content %}
     <span>
         <h1 id="BusinessName"> {{business.title}}</h1>
@@ -47,7 +51,7 @@
     </div>
     <div id="title-5">
         <h2 id="title-5-1">דרג:</h2>
-        <h6 id="title-5-1">במידה ולא תסמן כוכבים, המס' שישלח הוא 0</h6>
+        <h6 id="title-5-2">במידה ולא תסמן כוכבים, המס' שישלח הוא 0</h6>
     </div>
     <form id="form-r" onsubmit="event.preventDefault(); submitReview(this);">
         <div id="freeTxt">
@@ -74,4 +78,8 @@
 <div id="footerProfile">
     {{ super() }}
 </div>
+{% endblock %}
+
+{% block page_js %}
+    <script src="{{ url_for('profile.static', filename='js/profile.js') }}"></script>
 {% endblock %}

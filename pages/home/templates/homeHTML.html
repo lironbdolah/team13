@@ -4,6 +4,10 @@
 {{ title }}
 {% endblock %}
 
+{% block page_css %}
+    <link rel="stylesheet" href="{{ url_for('home.static', filename='css/home.css') }}"/>
+{% endblock %}
+
 {% block content %}
 <div id="homePageBody">
 
@@ -15,10 +19,7 @@
             <option value="בית עסק להמשך היום"> בית עסק לחיפוש עתידי</option>
             <option value="בית עסק ספציפי">בית עסק ספציפי</option>
         </select><br>
-        <div id="combo-div">
-            <div class="combp-slidecontainer">
-            </div>
-        </div>
+        <div id="combo-div"></div>
         {% if MSG %}
             <h4 id="msg_for_user">{{MSG}}</h4>
         {% endif %}
@@ -28,7 +29,10 @@
     </div>
 </div>
 
+{% endblock %}
 
+{% block page_js %}
+    <script src="{{ url_for('home.static', filename='js/home.js') }}"></script>
 {% endblock %}
 
 

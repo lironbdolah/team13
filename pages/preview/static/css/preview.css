@@ -1,0 +1,254 @@
+#preBody {
+    background-color: #fff7e6;
+    text-align: center;
+}
+
+/* line 43, scss/style.scss */
+#glass {
+    opacity: 20px;
+    position: relative;
+    width: 250px;
+    height: 320px;
+    border-left: 15px solid #f9f9f9;
+    border-right: 15px solid #f9f9f9;
+    border-bottom: 10px solid #f9f9f9;
+    border-top: none;
+    border-radius: 0 0 80px 80px;
+    margin-right: 10%;
+    margin-top: -200px;
+
+    background-color: #ffc34e;
+}
+
+/* line 56, scss/style.scss */
+.glass::before {
+    content: '';
+    display: block;
+    background-color: #ffe6b4;
+    position: absolute;
+    height: 90px;
+    width: 100%;
+    animation: liquidAnime 2s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* line 68, scss/style.scss */
+.ear {
+    height: 150px;
+    width: 70px;
+    border-top: 14px solid #f9f9f9;
+    border-right: 13px solid #f9f9f9;
+    border-bottom: 14px solid #f9f9f9;
+    border-radius: 5px 50px 50px 5px;
+    border-left: none;
+    position: absolute;
+    right: -86px;
+    top: 50px;
+}
+
+@keyframes foamAnimation {
+    0% {
+        width: 90px;
+        height: 90px;
+    }
+    50% {
+        width: 89px;
+        height: 89px;
+    }
+    100% {
+        width: 91px;
+        height: 91px;
+    }
+}
+
+
+/* line 94, scss/style.scss */
+.foam {
+    position: absolute;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: white;
+}
+
+/* line 100, scss/style.scss */
+.foam:nth-child(7) {
+    width: 100px;
+    height: 100px;
+    top: -10px;
+    left: 10px;
+    animation: foamAnimation 2500ms infinite;
+}
+
+/* line 105, scss/style.scss */
+.foam:nth-child(2) {
+    width: 70px;
+    height: 70px;
+    top: -30px;
+    left: 130px;
+    animation: foamAnimation 500ms infinite;
+}
+
+/* line 110, scss/style.scss */
+.foam:nth-child(3) {
+    width: 140px;
+    height: 140px;
+    top: -50px;
+    left: -50px;
+    animation: foamAnimation 1000ms infinite;
+}
+
+/* line 115, scss/style.scss */
+.foam:nth-child(4) {
+    width: 90px;
+    height: 90px;
+    top: -80px;
+    left: 10px;
+    animation: foamAnimation 1300ms infinite;
+}
+
+/* line 120, scss/style.scss */
+.foam:nth-child(5) {
+    width: 100px;
+    height: 100px;
+    top: -40px;
+    left: 210px;
+    animation: foamAnimation 1200ms infinite;
+}
+
+/* line 125, scss/style.scss */
+.foam:nth-child(6) {
+    width: 95px;
+    height: 95px;
+    top: -30px;
+    left: 60px;
+    animation: foamAnimation 900ms infinite;
+}
+
+/* line 130, scss/style.scss */
+.foam:nth-child(8) {
+    width: 95px;
+    height: 95px;
+    top: -50px;
+    left: 60px;
+    animation: foamAnimation 2s infinite;
+}
+
+/* line 135, scss/style.scss */
+.foam:nth-child(9) {
+    width: 95px;
+    height: 95px;
+    top: -50px;
+    left: 160px;
+    animation: foamAnimation 1s infinite;
+}
+
+/* line 140, scss/style.scss */
+.foam:nth-child(10) {
+    width: 120px;
+    height: 120px;
+    top: -20px;
+    left: 120px;
+    animation: foamAnimation 1500ms infinite;
+}
+
+/* line 146, scss/style.scss */
+.shine {
+    position: absolute;
+    top: 70px;
+    left: 30px;
+    width: 50px;
+    height: 0;
+    border-radius: 0 10px 0 70px;
+    border-top: 250px solid rgba(255, 255, 255, 0.3);
+    border-right: 70px solid transparent;
+}
+
+@keyframes upUpUp {
+    0% {
+        opacity: 0;
+        bottom: 0;
+        width: 5px;
+        height: 5px;
+    }
+    10% {
+        opacity: 1;
+    }
+    40% {
+        width: 15px;
+        height: 15px;
+    }
+    60% {
+        width: 29px;
+        height: 29px;
+    }
+    100% {
+        opacity: 0;
+        bottom: 230px;
+        width: 5px;
+        height: 5px;
+    }
+}
+
+/* line 187, scss/style.scss */
+.bubble {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+    border-radius: 50%;
+    transition: 2s;
+}
+
+/* line 196, scss/style.scss */
+.bubble:nth-child(12) {
+    left: 50px;
+    bottom: 0;
+    animation: upUpUp 2s infinite;
+}
+
+/* line 202, scss/style.scss */
+.bubble:nth-child(13) {
+    left: 80px;
+    bottom: 20px;
+    animation: upUpUp 3s infinite;
+}
+
+/* line 208, scss/style.scss */
+.bubble:nth-child(14) {
+    left: 130px;
+    bottom: 10px;
+    animation: upUpUp 1500ms infinite;
+}
+
+/* line 214, scss/style.scss */
+.bubble:nth-child(15) {
+    left: 180px;
+    bottom: 50px;
+    animation: upUpUp 1s infinite;
+}
+
+@media screen and (max-width: 900px) {
+    #glass {
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+}
+
+@keyframes liquidAnime {
+    0% {
+        transform: skew(0deg, 0deg);
+    }
+    35% {
+        transform: skew(0deg, 1deg);
+    }
+    50% {
+        transform: skew(0deg, 0deg);
+    }
+    65% {
+        transform: skew(0deg, -1deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}

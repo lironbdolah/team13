@@ -1,0 +1,292 @@
+/* ########### profiletHTML page settings  ########### */
+#BusinessName {
+    font-family: FirstFont;
+    font-size: 100px;
+    color: var(--orange7);
+    text-align: center;
+}
+
+#business-card {
+    border-radius: 150px;
+    background-color: var(--orange2);
+    align-items: center;
+    font-size: larger;
+    display: grid;
+    margin: 0px 200px 0px 200px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    grid-template-areas:  'title-1 details details'
+                        'title-1 details details'
+                        'title-3 stars   stars'
+                        'reviews reviews reviews'
+                        'title-4 form-r  form-r'
+                        'title-5 form-r  form-r'
+                        'order   order   order';
+
+}
+
+#form-r {
+    display: grid;
+    grid-area: form-r;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 'freeTxt freeTxt'
+                       'stars-2 submit-r'
+}
+
+#details {
+    grid-area: details;
+    background-color: white;
+    padding: 10px;
+    border-style: solid;
+    border: 1px;
+    margin: 30px 50px 10px 120px;
+    border-radius: 20px;
+}
+
+#reviews {
+    grid-area: reviews;
+    background-color: white;
+    padding: 10px;
+    border-style: solid;
+    border: 1px;
+    margin: 10px 100px 50px 120px;
+    border-radius: 20px;
+    overflow: hidden;
+    overflow-y: scroll;
+    max-height: 100px;
+
+}
+
+#bussiness-reviews {
+    padding-right: 25px;
+
+}
+
+#title-1 {
+    padding-right: 120px;
+    grid-area: title-1;
+    font-size: 16px;
+    width: 350px;
+}
+
+#title-1-2 {
+    padding-bottom: 50px;
+    width: 350px;
+}
+
+#title-3 {
+    padding-right: 120px;
+    font-size: 16px;
+    grid-area: title-3;
+    width: 350px;
+}
+
+#title-4 {
+    padding-right: 120px;
+    font-size: 16px;
+    grid-area: title-4;
+    width: 350px;
+}
+
+#title-5 {
+    padding-right: 120px;
+    font-size: 16px;
+    grid-area: title-5;
+}
+
+#open-hours {
+    padding-top: 0px;
+}
+
+#drinks-sales {
+    padding-right: 25px;
+}
+
+#stars {
+    grid-area: stars;
+    margin: 10px 50px 10px 100px;
+}
+
+#stars-2 {
+    grid-area: stars-2;
+    margin: 10px 50px 10px 50px;
+    display: inline-block;
+}
+
+.checked {
+    color: orange;
+}
+
+#freeTxt {
+    grid-area: freeTxt;
+    background-color: white;
+    padding: 10px;
+    border-style: solid;
+    border: 1px;
+    margin: 30px 50px 10px 120px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+#write {
+    margin-right: 20px;
+    margin-left: 20px;
+    display: inline-block;
+    border: 0cm;
+}
+
+#button-1 {
+    grid-area: button-1;
+    margin-right: 180px;
+    margin-bottom: 70px;
+
+}
+
+#order {
+    grid-area: order;
+    margin: 0 auto;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+#footerProfile{
+    padding-top: 50px;
+}
+
+
+@media screen and (max-width: 1250px) {
+    #business-card {
+        margin: 0px 100px 0px 100px;
+    }
+
+    #write {
+        width: 100px;
+    }
+
+    #stars-2 {
+        margin: 10px 50px 10px 0px;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+
+
+    #business-card {
+        margin: 0px 50px 0px 50px;
+    }
+
+    #write {
+        width: 50px;
+    }
+
+    #stars-2 {
+        margin: 10px 50px 10px 0px;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    #business-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:  'title-1 title-1'
+      'details details'
+      'title-3 stars'
+      'reviews reviews'
+      'title-4 title-4'
+      'title-5 title-5'
+      'form-r  form-r'
+      'form-r  form-r'
+      'order   order';
+    }
+
+    #title-1-2 {
+        padding-bottom: 0%;
+    }
+
+    #form-r {
+        margin-right: 50px;
+    }
+
+    #details {
+        margin-right: 100px;
+    }
+
+    #stars {
+        margin: 10px 0px 10px 0px;
+    }
+
+    #stars-2 {
+        margin: 10px 50px 10px 0px;
+    }
+}
+
+
+@media screen and (max-width: 585px) {
+    #business-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:  'title-1 title-1'
+      'details details'
+      'title-3 title-3'
+      'stars   stars'
+      'reviews reviews'
+      'title-4 title-4'
+      'title-5 title-5'
+      'form-r  form-r'
+      'form-r  form-r'
+      'order   order';
+    }
+
+    #title-1-2 {
+        padding-bottom: 0%;
+    }
+
+    #form-r {
+        margin-right: 20px;
+    }
+
+    #details {
+        margin-right: 100px;
+    }
+
+    #stars {
+        margin: 10px 140px 10px 140px;
+    }
+
+    #title-1-1 {
+        font-size: 16px;
+    }
+
+    #title-1-2 {
+        font-size: 16px;
+    }
+
+    #title-3-1 {
+        font-size: 16px;
+    }
+
+    #title-4-1 {
+        font-size: 16px;
+    }
+
+    #title-5-1 {
+        font-size: 16px;
+    }
+
+    #title-5-2{
+       font-size: 8px;
+    }
+
+    #stars {
+        margin: 10px 120px 10px 100px;
+    }
+
+    #stars-2 {
+        margin: 10px 50px 10px 0px;
+    }
+}
