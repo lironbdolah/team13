@@ -14,9 +14,9 @@ profile = Blueprint('profile', __name__, static_folder='static', url_prefix='/pr
 
 # if check time is between begin time and end time -> returns TRUE
 def is_time_between(my_begin_time, my_end_time, business_start_time,business_end_time):
-    return (business_start_time <= my_begin_time and business_end_time > my_begin_time) or (business_start_time <= my_end_time and business_end_time > my_end_time)
+    return (my_begin_time >= business_start_time) and (my_end_time <= business_end_time)
 
-def messure_distance(lat1,long1,lat2,long2):
+def messure_distance(lat1, long1, lat2, long2):
     # approximate radius of earth in km
     R = 6373.0
 
