@@ -11,7 +11,6 @@ month_reccomendation = Blueprint('month_reccomendation', __name__, static_folder
 def redirect_month_reccomendation():
     b = Business()
     businesses = b.month_businesses()
-    print(businesses)
 
     return render_template('month_reccomendation.html', businesses={
         'first': businesses[0].name,

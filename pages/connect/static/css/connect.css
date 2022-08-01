@@ -5,7 +5,7 @@
     border-radius: 5px;
     border-color: var(--orange6);
     border-style: solid;
-    height: 200px;
+    height: 250px;
     width: 300px;
     margin: 0 auto;
     text-align: right;
@@ -15,6 +15,9 @@
 
 }
 
+#delete_user{
+    padding-right: 100px;
+}
 #footerProfile {
     padding-top: 200px;
 }

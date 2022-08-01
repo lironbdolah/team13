@@ -27,12 +27,28 @@ def redirect_connect():
             return redirect('/home')
 
         elif(message_connect == 'הסיסמה לא תואמת לאימייל, אנא נסה בשנית!'):
-            return render_template('connect.html', message_for_user=message_connect)
+             return render_template('connect.html', message_for_user=message_connect)
 
         else:
             return render_template('connect.html', message_for_user=message_connect)
 
+
     return render_template('connect.html', message_for_user=message_for_user)
+
+@connect.route('/connect/delete-user', methods=['GET', 'POST'])
+def delete_user():
+    message_delete = ''
+    if request.method == "POST":
+        user_password = request.form['pass']
+        user_email = request.form['email']
+        user = User(email=user_email, password=user_password)
+
+        if user.delete_user():
+            message_delete = "משתמש נמחק בהצלחה"
+            return render_template('delete_user.html', message_for_user=message_delete)
+        message_delete = 'פרטי משתמש לא נמצאו, בדוק אימייל וסיסמה'
+    return render_template('delete_user.html', message_for_user=message_delete)
+
 
 
 @connect.route('/logout', methods=['GET', 'POST'])

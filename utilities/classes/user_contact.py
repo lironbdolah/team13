@@ -12,4 +12,3 @@ class user_contact:
         guery = "INSERT INTO contacts(full_name, email, phone_number) VALUES ('%s', '%s', '%s')" % (self.user_name, self.user_email, self.phone_number)
         db = DBManager()
         db.commit(guery)
-

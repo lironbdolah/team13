@@ -11,22 +11,18 @@
 {% block content %}
 <div id="homePageBody">
     <span>
-        <h1 id="header3"> התחברות</h1>
+        <h1 id="header3"> מחיקת משתמש</h1>
     </span>
 
-    <form id="connect_border" action="/connect" method="post" name="connect_form"
-          onsubmit="return connect_validation(document.connect_form.pass,document.connect_form.name);">
+    <form id="connect_border" action="/connect/delete-user" method="post" name="connect_form">
         <label class="username">אימייל:</label>
         <input type="email" class="input" id="email" name="email" autocomplete="on">
 
         <label class="password">סיסמה:</label>
         <input type="text" class="input" id="pass" name="pass" minlength="2" autocomplete="on">
 
-        <button type="submit" id="send_button" name="send_button">שלח</button>
-        <a href="/contact" class="forgot_password">שכחתי סיסמה </a>
-        <div>
-            <a href="/connect/delete-user" id="delete_user">מחק משתמש</a>
-        </div>
+        <button type="submit" id="send_button" name="send_button">מחק</button>
+
     </form>
     {% if message_for_user %}
         <h4>{{message_for_user }}</h4>

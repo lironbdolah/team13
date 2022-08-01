@@ -30,23 +30,24 @@ class User:
         self.db.commit(query)
 
     def connect(self):
-        query = 'select * from users'
+        query = "SELECT mail FROM users WHERE mail='%s' AND password='%s';" % (self.email, self.password)
         users_l = self.db.fetch(query)
-        for user in users_l:
-            if user.mail == self.email:
-                if user.password == self.password:
-                    return 'משתמש נכנס בהצלחה'
-                else:
-                    return 'הסיסמה לא תואמת לאימייל, אנא נסה בשנית!'
-        return 'אימייל זה לא קיים במערכת'
+        print(users_l)
+        if len(users_l) > 0:
+            return 'משתמש נכנס בהצלחה'
+
+        return 'משתמש זה לא קיים במערכת, אנא בדוק את הפרטים בשנית'
 
     def connect_first_time(self):
-        query = 'select * from users'
+        query = "SELECT mail FROM users WHERE mail='%s';" % self.email
         users_l = self.db.fetch(query)
-        for user in users_l:
-            if user.mail == self.email:
-                    return 'אימייל זה כבר קיים במערכת. אנא בחר אימייל אחר'
-            else:
-                    return ''
+        if len(users_l) > 0:
+            return 'אימייל זה כבר קיים במערכת. אנא בחר אימייל אחר'
         return ''
 
+    def delete_user(self):
+        print(self.email, self.password)
+        query = "DELETE FROM reviews WHERE mail='%s';" % self.email
+        self.db.commit(query)
+        query = "DELETE FROM users WHERE mail='%s' AND password='%s';" % (self.email, self.password)
+        return self.db.commit(query)

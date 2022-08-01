@@ -38,8 +38,10 @@ class Business:
         return self.db.commit(query)
 
     def month_businesses(self):
-        query = "SELECT * FROM businesses order by stars desc limit 3"
+        query = "SELECT name FROM businesses order by stars desc limit 3"
         return self.db.fetch(query)
+
+
 
 
 
