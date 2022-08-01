@@ -29,8 +29,8 @@ def messure_distance(lat1, long1, lat2, long2):
     c = 2 * atan2(sqrt(a), sqrt(1 - a))
 
     distance = R * c
+    print(distance)
     return distance
-
 
 # Routes
 @profile.route('/', methods=['GET', 'POST'])
@@ -119,7 +119,7 @@ def redirect_profile_by_location():
     for i in businesses:
         lat_2 = i.latitude
         long_2 = i.longitude
-        print(lat_2,long_2)
+        print(lat_2, long_2)
         distance = messure_distance(lat_1, long_1, lat_2, long_2)
         print(distance, range)
         if distance < range:

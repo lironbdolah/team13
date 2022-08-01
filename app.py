@@ -1,4 +1,5 @@
 from datetime import timedelta
+from utilities.DB.initiateDB import InitiateDb
 
 from flask import Flask, redirect, render_template, url_for, request, session
 import mysql.connector
@@ -9,6 +10,7 @@ app = Flask(__name__)
 app.secret_key = '123'
 app.config['SESSION_PERMANENT'] = True
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=20)
+InitiateDb().create_tables()
 
 @app.route('/')
 def main_page():
