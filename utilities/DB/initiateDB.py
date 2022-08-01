@@ -6,7 +6,7 @@ class InitiateDb:
         self.db = DBManager()
 
     def create_tables(self):
-        query = "SELECT * FROM information_schema.tables WHERE table_schema = 'group13' AND table_name = 'users';"
+        query = "SELECT * FROM information_schema.tables WHERE table_schema = 'web-project-g13' AND table_name = 'users';"
         user_list = self.db.fetch(query)
         if len(user_list) == 0:
             query = "CREATE TABLE users (mail VARCHAR(30) not null primary key, user_name VARCHAR(20), password VARCHAR(20), phone_number INTEGER, age INTEGER, gender CHAR(1))"
@@ -19,7 +19,7 @@ class InitiateDb:
                     "('omer@gmail.com', 'omerbenami', 'ASDasd123', '514765044', '20', 'F')"
             self.db.commit(query)
 
-        query = "SELECT * FROM information_schema.tables WHERE table_schema = 'group13' AND table_name = 'businesses';"
+        query = "SELECT * FROM information_schema.tables WHERE table_schema = 'web-project-g13' AND table_name = 'businesses';"
         businesses_list = self.db.fetch(query)
         if len(businesses_list) == 0:
             query = "CREATE TABLE businesses (id INTEGER not null primary key, url VARCHAR(200), name VARCHAR(50), start_hour VARCHAR(10), end_hour VARCHAR(10), stars INTEGER, city VARCHAR(30), longitude FLOAT, latitude FLOAT, deals VARCHAR(500))"
@@ -35,7 +35,7 @@ class InitiateDb:
                     "('9','https://www.facebook.com/rozzabar', 'רוזה', '19:00', '20:30', '3', 'באר שבע', '34.7952', '31.2594', 'חצי בירה מהחבית פלוס 2 צייסרים 39 שח' )"
             self.db.commit(query)
 
-        query = "SELECT * FROM information_schema.tables WHERE table_schema = 'group13' AND table_name = 'reviews';"
+        query = "SELECT * FROM information_schema.tables WHERE table_schema = 'web-project-g13' AND table_name = 'reviews';"
         reviews_list = self.db.fetch(query)
         if len(reviews_list) == 0:
             query = "CREATE TABLE reviews (review_time datetime not null primary key, stars integer, free_text VARCHAR(200), mail varchar(30), business INTEGER, foreign key (mail) references users (mail),foreign key (business) references businesses (id))"
@@ -43,7 +43,7 @@ class InitiateDb:
             query = "INSERT INTO reviews values ('2022-05-25 16:15:16', '5', 'מושששש', 'adiri@gmail.com', '1'),('2022-06-18 15:26:29', '2', 'הזמנו שולחן ל10 אנשים, ביקשו מינימום של 70 לראש, איזו חוצפה!', 'liron@gmail.com', '1'),('2022-06-23 16:16:23', '4', 'היה טעים מאוד, אווירה נעימה, נחזור!', 'adiri@gmail.com','2' ),('2022-06-25 13:00:25', '1','מקום גרוע ממש', 'adiri@gmail.com', '1' ),('2022-06-25 17:39:03', '2', 'למה לא חזרתם מאז הקורונה??','a@gmail.com', '6' ),('2022-06-25 19:31:37', '1', 'מקום גרוע', 'a@gmail.com', '4'),('2022-06-25 20:35:04', '4', 'מקום נעים, מוזיקה טובה', 'adiri@gmail.com', '3'),('2022-06-25 20:39:57', '5', 'וואו איזה מקום, פצצוחה!!!','alon@gmail.com', '5'),('2022-06-25 20:40:36', '2','היה לא מפנק בכלל, שילמנו כאילו אנחנו בתל אביב', 'ofir@gmail.com', '7'),('2022-06-25 20:41:36', '5', 'המקום הכי טוב בעולם! פיצה נדירה','omer@gmail.com','8' ),('2022-06-25 20:42:21', '3', 'למה אי אפשר לשלם באפל פיי? מיושנים!!','liron@gmail.com', '9' ),('2022-06-25 20:44:47', '1','מקום גרוע', 'a@gmail.com', '8'),('2022-06-25 20:58:55', '3', 'לא התלהבנו','a@gmail.com','1')"
             self.db.commit(query)
 
-        query = "SELECT * FROM information_schema.tables WHERE table_schema = 'group13' AND table_name = 'contacts';"
+        query = "SELECT * FROM information_schema.tables WHERE table_schema = 'web-project-g13' AND table_name = 'contacts';"
         contacts_list = self.db.fetch(query)
         if len(contacts_list) == 0:
             query = "CREATE TABLE contacts (full_name VARCHAR(50), email VARCHAR(50) not null primary key, phone_number VARCHAR(20))"
